@@ -22,3 +22,5 @@ pnpm build
 ```
 
 > You can preview the built app with `pnpm preview`, regardless of whether you installed an adapter. This should _not_ be used to serve the app in production.
+
+> This project requires at least Node v14.13 to run
