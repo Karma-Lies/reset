@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7befdeff-e928-4eed-b7b6-0552a9bea11a/deploy-status)](https://app.netlify.com/sites/resetpresents/deploys)
+
 # ✨ RESET ⚡️
 
 The online experience for the Chicago event company, Reset Presents, powered by [SvelteKit](https://github.com/sveltejs/kit);
