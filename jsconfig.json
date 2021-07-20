@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"$lib": ["src/lib"],
+			"$lib/*": ["src/lib/*"]
+		},
+		"module": "es2020"
+	},
+	"include": [
+		"src/**/*.d.ts",
+		"src/**/*.js",
+		"src/**/*.svelte",
+		"src/routes/events/[year]/[slug].json.mjs",
+		"src/routes/events/[year]/[slug].json.ts"
+	]
+}
