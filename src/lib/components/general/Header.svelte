@@ -1,5 +1,5 @@
 <script>
-	import Logo from '$lib/assets/Reset.svelte';
+	import Logo from '$svg/Reset.svelte';
 </script>
 
 <header class="w-full px-8 py-4">

@@ -1,8 +1,8 @@
 <script>
-	import Discord from '$icons/Discord.svelte';
-	import Instagram from '$icons/Instagram.svelte';
-	import Twitter from '$icons/Twitter.svelte';
-	import Facebook from '$icons/Facebook.svelte';
+	import Discord from '$svg/Discord.svelte';
+	import Instagram from '$svg/Instagram.svelte';
+	import Twitter from '$svg/Twitter.svelte';
+	import Facebook from '$svg/Facebook.svelte';
 </script>
 
 <ul class="flex flex-row space-x-3">

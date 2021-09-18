@@ -25,7 +25,7 @@ const config = {
 			plugins: [svg()],
 			resolve: {
 				alias: {
-					$icons: path.resolve('src/lib/assets/icons')
+					$svg: path.resolve('src/lib/assets/svg')
 				}
 			}
 		}

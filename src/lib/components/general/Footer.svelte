@@ -1,6 +1,6 @@
 <script>
-	import Logo from '$lib/assets/Reset.svelte';
-	import SocialLinks from '../SocialLinks.svelte';
+	import Logo from '$svg/Reset.svelte';
+	import SocialLinks from '../02. molecules/SocialLinks.svelte';
 </script>
 
 <hr
@@ -18,12 +18,15 @@
 				<small class="opacity-40">music for the rest of us</small>
 			</li>
 			<li class="w-max-w">
-				<ul class="flex justify-center space-x-4 font-mono">
-					<li>
-						<a sveltekit:prefetch href="/events"> events </a>
+				<ul class="flex justify-center space-x-6 font-mono">
+					<li class="footer-element">
+						<a sveltekit:prefetch href="/events">events</a>
 					</li>
-					<li>
-						<a sveltekit:prefetch href="/about"> about</a>
+					<li class="footer-element">
+						<a sveltekit:prefetch href="/about">about</a>
+					</li>
+					<li class="footer-element">
+						<a sveltekit:prefetch href="/contact">contact</a>
 					</li>
 				</ul>
 			</li>
@@ -33,3 +36,12 @@
 		</ul>
 	</nav>
 </footer>
+
+<style lang="postcss">
+	.footer-element {
+		@apply opacity-40 transition-opacity;
+	}
+	.footer-element:hover {
+		@apply opacity-100;
+	}
+</style>
