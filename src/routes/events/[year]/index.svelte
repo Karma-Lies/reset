@@ -22,20 +22,17 @@
 </script>
 
 <script>
+	// Component imports
+	import LabeledSlider from '$lib/components/03. modules/LabeledSlider.svelte';
+
+	// Props
 	export let events;
+
+	// Logic
+	const currentDate = new Date();
+	const upcomingEvents = events.filter((event) => new Date(event.startTime) >= currentDate);
 </script>
 
-<section id="upcoming-events" class="m-6">
-	<h2 class="text-2xl">Upcoming Events -></h2>
-
-	<ul>
-		{#each events as event}
-			<li>
-				<a href="/events/{event.year}/{event.slug}">
-					<img src={event.flyer.url} alt="{event.title} flyer" class="max-h-[80vh] object-fit" />
-					<h3 class="sr-only">{event.title}</h3></a
-				>
-			</li>
-		{/each}
-	</ul>
-</section>
+{#if upcomingEvents.length > 0}
+	<LabeledSlider id="upcoming-events" href="/events" {events}>Upcoming Events</LabeledSlider>
+{/if}
