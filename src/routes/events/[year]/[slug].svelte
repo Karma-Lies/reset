@@ -22,6 +22,7 @@
 </script>
 
 <script>
+	// Props
 	export let event;
 </script>
 

@@ -7,6 +7,7 @@
 </script>
 
 <script>
+	// Props
 	export let error, status;
 </script>
 

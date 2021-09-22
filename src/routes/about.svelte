@@ -28,6 +28,7 @@
 </script>
 
 <script>
+	// Props
 	export let page;
 </script>
 

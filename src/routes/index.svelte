@@ -23,8 +23,10 @@
 </script>
 
 <script>
+	// Component imports
 	import LabeledSlider from './../lib/components/03. modules/LabeledSlider.svelte';
 
+	// Props
 	export let events;
 </script>
 

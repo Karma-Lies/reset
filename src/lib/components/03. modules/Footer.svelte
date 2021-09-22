@@ -1,4 +1,5 @@
 <script>
+	// Component imports
 	import Logo from '$svg/Reset.svelte';
 	import SocialLinks from '../02. molecules/SocialLinks.svelte';
 </script>

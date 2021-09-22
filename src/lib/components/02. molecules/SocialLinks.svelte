@@ -1,4 +1,5 @@
 <script>
+	// Component imports
 	import Discord from '$svg/Discord.svelte';
 	import Instagram from '$svg/Instagram.svelte';
 	import Twitter from '$svg/Twitter.svelte';
