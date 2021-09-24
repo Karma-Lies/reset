@@ -7,7 +7,7 @@
 <hr
 	class="h-2 w-full bg-gradient-to-r from-purple-400 to-red-600 via-purple-500 border-0 border-transparent drop-shadow-xl max-w-full 2xl:rounded-sm"
 />
-<footer class="w-full p-8">
+<footer class="w-full p-8 space-y-4">
 	<nav>
 		<ul class="flex space-y-6 lg:space-y-0 lg:justify-between flex-col lg:flex-row">
 			<li class="mx-auto lg:mx-0 w-72">
@@ -36,6 +36,19 @@
 			</li>
 		</ul>
 	</nav>
+	<div class="w-full text-center lg:text-right text-gray-500">
+		made with <span
+			class="relative inline-block transform rotate-0 hover:rotate-[30deg] cursor-default transition-transform"
+		>
+			🍵
+		</span>
+		by
+		<a
+			href="https://karmalies.studio"
+			class="text-indigo-400 hover:text-indigo-200 standard-link transition-colors font-semibold"
+			>Karma Lies</a
+		>
+	</div>
 </footer>
 
 <style lang="postcss">
