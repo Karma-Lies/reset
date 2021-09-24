@@ -28,10 +28,14 @@
 </script>
 
 <script>
+	// Component imports
+	import SEO from '$lib/components/01. atoms/SEO.svelte';
+
 	// Props
 	export let page;
 </script>
 
+<SEO title="About" url="about" />
 <section id="about" class="m-12 p-4">
 	<h1 class="text-4xl">{page.title}</h1>
 	<main class="max-w-prose">

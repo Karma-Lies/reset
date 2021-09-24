@@ -24,10 +24,13 @@
 
 <script>
 	// Component imports
+	import SEO from '$lib/components/01. atoms/SEO.svelte';
 	import LabeledSlider from './../lib/components/03. modules/LabeledSlider.svelte';
 
 	// Props
 	export let events;
 </script>
+
+<SEO prefixSiteName />
 
 <LabeledSlider id="upcoming-events" href="/events" {events}>Upcoming Events</LabeledSlider>
