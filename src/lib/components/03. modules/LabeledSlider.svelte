@@ -10,7 +10,7 @@
 </script>
 
 <section {id} class="m-6">
-	<h2 class="text-2xl py-2 text-gray-200">
+	<h2 class="text-2xl py-2 text-gray-900 dark:text-gray-200">
 		<ArrowLink {href}><slot /></ArrowLink>
 	</h2>
 	<ul class="flex flex-row space-x-8">
