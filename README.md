@@ -2,7 +2,7 @@
 
 # ✨ RESET ⚡️
 
-The online experience for the Chicago event company, Reset Presents, powered by [SvelteKit](https://github.com/sveltejs/kit);
+The online experience for the Chicago event organization, Reset Presents, powered by [SvelteKit](https://github.com/sveltejs/kit);
 
 ## ⚙️ Developing
 
