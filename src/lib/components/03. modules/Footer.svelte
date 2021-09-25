@@ -10,7 +10,7 @@
 <footer class="w-full p-8 space-y-4">
 	<nav>
 		<ul class="flex space-y-6 lg:space-y-0 lg:justify-between flex-col lg:flex-row">
-			<li class="mx-auto lg:mx-0 w-72">
+			<li class="mx-auto lg:mx-0 max-w-max">
 				<h1 class="w-24 inline-block">
 					<a sveltekit:prefetch href="/">
 						<Logo />
