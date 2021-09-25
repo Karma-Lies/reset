@@ -14,7 +14,7 @@ specifiers:
   graphql-request: 3.5.0
   postcss: 8.3.7
   postcss-load-config: 3.1.0
-  prettier: 2.2.1
+  prettier: 2.4.1
   prettier-plugin-svelte: 2.4.0
   svelte: 3.43.0
   svelte-preprocess: 4.9.5
@@ -34,8 +34,8 @@ devDependencies:
   graphql-request: 3.5.0_graphql@15.6.0
   postcss: 8.3.7
   postcss-load-config: 3.1.0
-  prettier: 2.2.1
-  prettier-plugin-svelte: 2.4.0_prettier@2.2.1+svelte@3.43.0
+  prettier: 2.4.1
+  prettier-plugin-svelte: 2.4.0_prettier@2.4.1+svelte@3.43.0
   svelte: 3.43.0
   svelte-preprocess: 4.9.5_c4af368bfec438a780c940d5b18c59a0
   tailwindcss: 2.2.15_dd4850c39760d2665af3f9e21d00faf4
@@ -1856,18 +1856,18 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-svelte/2.4.0_prettier@2.2.1+svelte@3.43.0:
+  /prettier-plugin-svelte/2.4.0_prettier@2.4.1+svelte@3.43.0:
     resolution: {integrity: sha512-JwJ9bOz4XHLQtiLnX4mTSSDUdhu12WH8sTwy/XTDCSyPlah6IcV7NWeYBZscPEcceu2YnW8Y9sJCP40Z2UH9GA==}
     peerDependencies:
       prettier: ^1.16.4 || ^2.0.0
       svelte: ^3.2.0
     dependencies:
-      prettier: 2.2.1
+      prettier: 2.4.1
       svelte: 3.43.0
     dev: true
 
-  /prettier/2.2.1:
-    resolution: {integrity: sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q==}
+  /prettier/2.4.1:
+    resolution: {integrity: sha512-9fbDAXSBcc6Bs1mZrDYb3XKzDLm4EXXL9sC1LqKP5rZkT6KRr/rf9amVUcODVXgguK/isJz0d0hP72WeaKWsvA==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
