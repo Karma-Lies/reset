@@ -18,7 +18,7 @@ specifiers:
   prettier-plugin-svelte: 2.4.0
   svelte: 3.43.0
   svelte-preprocess: 4.9.5
-  tailwindcss: 2.2.15
+  tailwindcss: 2.2.16
 
 devDependencies:
   '@poppanator/sveltekit-svg': 0.1.7_svelte@3.43.0
@@ -38,7 +38,7 @@ devDependencies:
   prettier-plugin-svelte: 2.4.0_prettier@2.2.1+svelte@3.43.0
   svelte: 3.43.0
   svelte-preprocess: 4.9.5_c4af368bfec438a780c940d5b18c59a0
-  tailwindcss: 2.2.15_dd4850c39760d2665af3f9e21d00faf4
+  tailwindcss: 2.2.16_dd4850c39760d2665af3f9e21d00faf4
 
 packages:
 
@@ -2219,8 +2219,8 @@ packages:
       strip-ansi: 6.0.0
     dev: true
 
-  /tailwindcss/2.2.15_dd4850c39760d2665af3f9e21d00faf4:
-    resolution: {integrity: sha512-WgV41xTMbnSoTNMNnJvShQZ+8GmY86DmXTrCgnsveNZJdlybfwCItV8kAqjYmU49YiFr+ofzmT1JlAKajBZboQ==}
+  /tailwindcss/2.2.16_dd4850c39760d2665af3f9e21d00faf4:
+    resolution: {integrity: sha512-EireCtpQyyJ4Xz8NYzHafBoy4baCOO96flM0+HgtsFcIQ9KFy/YBK3GEtlnD+rXen0e4xm8t3WiUcKBJmN6yjg==}
     engines: {node: '>=12.13.0'}
     hasBin: true
     peerDependencies:
