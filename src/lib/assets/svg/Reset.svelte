@@ -19,6 +19,7 @@
 	fill="currentColor"
 	aria-labelledby="resetTitle resetDesc"
 	role="img"
+	class="w-full"
 >
 	<title id="resetTitle">Reset Presents</title>
 	<desc id="resetDesc">Our funky, blocky logo with connected lettering</desc>
