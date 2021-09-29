@@ -4,8 +4,8 @@
 	import SocialLinks from '../02. molecules/SocialLinks.svelte';
 </script>
 
-<hr
-	class="h-2 w-full bg-gradient-to-r from-purple-400 to-red-600 via-purple-500 border-0 border-transparent drop-shadow-xl max-w-full 2xl:rounded-sm"
+<div
+	class="h-2 w-full bg-gradient-to-r from-purple-400 via-red-500 to-yellow-400 drop-shadow-xl max-w-full 2xl:rounded-sm"
 />
 <footer class="w-full p-8 space-y-4">
 	<nav>
