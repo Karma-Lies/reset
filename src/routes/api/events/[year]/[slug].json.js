@@ -29,6 +29,7 @@ export async function get({ params }) {
 				}
 				description {
 					html
+					text
 				}
 			}
 		}

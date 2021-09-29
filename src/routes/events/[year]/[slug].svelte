@@ -43,7 +43,12 @@
 	});
 </script>
 
-<SEO title="{event.title} {year}" url="events/{year}/{slug}" />
+<SEO
+	title="{event.title} {year}"
+	description={event.description.text}
+	url="events/{year}/{slug}"
+	image={{ src: event.flyer.url, alt: `${event.title} flyer` }}
+/>
 <article class="grid lg:grid-cols-2 justify-center content-start p-4 text-lg lg:gap-4">
 	<section class="p-2 lg:w-5/6 xl:w-3/4 justify-self-end">
 		<a href={event.ticketPurchaseUrl}>
