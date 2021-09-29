@@ -55,11 +55,11 @@
 			<img src={event.flyer.url} alt="{event.title} flyer" class="rounded-sm box-content" />
 		</a>
 	</section>
-	<section class="p-2 space-y-2 grout">
-		<div class="flex flex-wrap items-center">
+	<section class="p-2 space-y-4 md:space-y-2 grout">
+		<div class="flex flex-col space-y-2 md:space-y-0 md:flex-row flex-wrap items-center">
 			<h1
 				name="title"
-				class="text-6xl font-heading mr-4"
+				class="text-6xl font-heading md:mr-4"
 				style="margin-top: calc((1 - 1.25) * 0.5em);"
 			>
 				{event.title}

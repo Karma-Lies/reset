@@ -10,7 +10,7 @@
 <footer class="w-full p-8 space-y-4">
 	<nav>
 		<ul class="flex space-y-6 lg:space-y-0 lg:justify-between flex-col lg:flex-row">
-			<li class="mx-auto lg:mx-0 max-w-max">
+			<li class="mx-auto lg:mx-0 lg:w-72">
 				<h1 class="w-24 inline-block">
 					<a sveltekit:prefetch href="/">
 						<Logo />
@@ -18,8 +18,8 @@
 				</h1>
 				<small class="opacity-40">music for the rest of us</small>
 			</li>
-			<li class="w-max-w">
-				<ul class="flex justify-center space-x-6 font-mono">
+			<li class="w-max-w flex-1">
+				<ul class="flex justify-center space-x-6">
 					<li class="dim standard-link">
 						<a sveltekit:prefetch href="/events">events</a>
 					</li>
