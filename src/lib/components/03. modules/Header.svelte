@@ -3,18 +3,16 @@
 	import Logo from '$svg/Reset.svelte';
 </script>
 
-<header
-	class="w-full px-8 py-4 sticky z-30 top-0 bg-gradient-to-b from-white dark:from-black to-transparent"
->
+<header>
 	<nav
-		class="max-w-max mx-auto text-black dark:text-white font-semibold text-lg drop-shadow-bonk-light dark:drop-shadow-bonk-dark"
+		class="max-w-max mx-auto text-black dark:text-gray-100 text-lg drop-shadow-bonk-light dark:drop-shadow-bonk-dark pointer-events-auto"
 	>
-		<ul class="flex justify-evenly place-items-center space-x-4 font-mono">
+		<ul class="flex justify-evenly place-items-center space-x-4 font-archivo">
 			<li class="w-16">
 				<a class="standard-link" sveltekit:prefetch href="/events"> events </a>
 			</li>
 			<li class="">
-				<h1 class="w-40 md:w-80">
+				<h1 class="w-40 md:w-64">
 					<a sveltekit:prefetch href="/">
 						<Logo />
 					</a>
@@ -26,3 +24,10 @@
 		</ul>
 	</nav>
 </header>
+
+<style lang="postcss">
+	header {
+		@apply w-full px-8 relative py-4 pointer-events-none;
+		@apply before:absolute before:top-0 before:inset-x-0 before:w-full before:h-full before:bg-gradient-to-b dark:before:from-crisp-dark before:from-gray-100;
+	}
+</style>
