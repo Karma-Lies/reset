@@ -19,6 +19,14 @@ export async function get({ params }) {
 				}
 				address
 				ticketPurchaseUrl
+				accentColor {
+					hex
+					rgba {
+						r
+						g
+						b
+					}
+				}
 				description {
 					html
 				}

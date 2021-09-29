@@ -36,8 +36,8 @@
 	const startTime = new Date(event.startTime).toLocaleString('en-US', {
 		weekday: 'short',
 		year: 'numeric',
-		month: '2-digit',
-		day: '2-digit',
+		month: 'long',
+		day: 'numeric',
 		hour: '2-digit',
 		minute: '2-digit'
 	});
@@ -45,19 +45,22 @@
 
 <SEO title="{event.title} {year}" url="events/{year}/{slug}" />
 <article class="grid lg:grid-cols-2 justify-center content-start p-4 text-lg lg:gap-4">
-	<section class="p-2 lg:w-5/6 xl:w-3/4 justify-self-end rounded-sm">
+	<section class="p-2 lg:w-5/6 xl:w-3/4 justify-self-end">
 		<a href={event.ticketPurchaseUrl}>
-			<img src={event.flyer.url} alt="{event.title} flyer" />
+			<img src={event.flyer.url} alt="{event.title} flyer" class="rounded-sm box-content" />
 		</a>
 	</section>
-	<section class="p-2 space-y-4 grout">
+	<section class="p-2 space-y-2 grout">
 		<div class="flex flex-wrap items-center">
-			<h1 name="title" class="text-6xl font-archivo mr-4">{event.title}</h1>
-			<a
-				target="_blank"
-				name="tickets"
-				class="self-center transition-colors max-w-max text-xl bg-gradient-to-r from-indigo-50 to-pink-50 dark:from-purple-700 dark:to-purple-600 border-2 rounded-sm border-black p-2 dark:border-purple-600 dark:hover:border-b-purple-100 dark:text-white"
-				href={event.ticketPurchaseUrl}>Get Tickets</a
+			<h1
+				name="title"
+				class="text-6xl font-archivo mr-4"
+				style="margin-top: calc((1 - 1.25) * 0.5em);"
+			>
+				{event.title}
+			</h1>
+			<a target="_blank" name="tickets" class="ticket-purchase" href={event.ticketPurchaseUrl}
+				>Get Tickets</a
 			>
 		</div>
 		<h2 class="sr-only">Details</h2>
@@ -86,7 +89,13 @@
 
 <style lang="postcss">
 	h3 {
-		@apply text-yellow-400 max-w-max tracking-wide font-semibold text-sm;
+		@apply text-gray-700 max-w-max tracking-wide font-semibold text-sm;
+	}
+	.ticket-purchase {
+		@apply p-2 self-center max-w-max text-xl rounded-sm transition-colors;
+		@apply bg-gradient-to-r from-indigo-50 to-pink-50;
+		@apply dark:from-purple-700 dark:to-purple-600 dark:text-white dark:hover:from-purple-800 dark:hover:to-purple-700;
+		@apply border-2 border-black dark:border-purple-600 dark:hover:border-purple-400;
 	}
 	.grout > ul {
 		@apply divide-y-2 divide-gray-800 divide-opacity-20 border-2 border-gray-800 border-opacity-20 text-gray-300;
