@@ -6,7 +6,7 @@
 	class="grid lg:grid-cols-2 py-16 xl:py-24 bg-gray-900 bg-opacity-20"
 >
 	<div class="m-auto p-6 transform-gpu">
-		<h2 class="text-7xl font-archivo text-gray-100">Be the first to know about our shows</h2>
+		<h2 class="text-7xl font-heading text-gray-100">Be the first to know about our shows</h2>
 	</div>
 	<div class="m-auto space-y-4 p-6 lg:px-8 w-full md:w-4/6 lg:w-full xl:w-3/4 font-sans">
 		<form

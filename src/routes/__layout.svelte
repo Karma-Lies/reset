@@ -8,7 +8,7 @@
 	import '../app.postcss';
 </script>
 
-<div class="relative flex flex-col min-h-screen mx-auto font-lexend max-w-screen-2xl">
+<div class="relative flex flex-col min-h-screen mx-auto font-general max-w-screen-2xl">
 	<Header />
 	<main class="flex-1 my-8 min-h-[40rem]">
 		<slot />

@@ -24,8 +24,8 @@ const config = {
 				'bonk-dark': '0rem 0.25rem 0.25rem #222'
 			},
 			fontFamily: {
-				archivo: 'Archivo Black',
-				lexend: 'Lexend'
+				heading: 'Archivo Black',
+				general: 'Inter'
 			}
 		}
 	},

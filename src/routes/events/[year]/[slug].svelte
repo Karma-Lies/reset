@@ -59,7 +59,7 @@
 		<div class="flex flex-wrap items-center">
 			<h1
 				name="title"
-				class="text-6xl font-archivo mr-4"
+				class="text-6xl font-heading mr-4"
 				style="margin-top: calc((1 - 1.25) * 0.5em);"
 			>
 				{event.title}

@@ -14,7 +14,7 @@
 	{#each artists as artist (artist.name)}
 		<li class="flex space-x-4">
 			<a
-				class="test font-medium bg-clip-text text-transparent bg-gradient-to-br from-purple-100 via-purple-200 to-purple-500 hover:bg-gradient-to-tl hover:to-yellow-600"
+				class="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-100 via-purple-200 to-purple-500 hover:bg-gradient-to-tl hover:to-yellow-600"
 				href={artist.spotify}
 			>
 				{artist.name}

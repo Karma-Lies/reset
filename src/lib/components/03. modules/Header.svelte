@@ -7,7 +7,7 @@
 	<nav
 		class="max-w-max mx-auto text-black dark:text-gray-100 text-lg drop-shadow-bonk-light dark:drop-shadow-bonk-dark pointer-events-auto"
 	>
-		<ul class="flex justify-evenly place-items-center space-x-4 font-archivo">
+		<ul class="flex justify-evenly place-items-center space-x-4 font-heading">
 			<li class="w-16">
 				<a class="standard-link" sveltekit:prefetch href="/events"> events </a>
 			</li>
