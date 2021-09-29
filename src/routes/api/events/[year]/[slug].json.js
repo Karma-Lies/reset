@@ -18,6 +18,7 @@ export async function get({ params }) {
 					url
 				}
 				address
+				ticketPurchaseUrl
 				description {
 					html
 				}
