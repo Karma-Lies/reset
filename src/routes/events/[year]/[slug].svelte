@@ -41,6 +41,40 @@
 		hour: '2-digit',
 		minute: '2-digit'
 	});
+
+	// Rockable
+	function rockable(node) {
+		let { offsetWidth, offsetHeight } = node;
+		let center = {
+			x: offsetWidth / 2,
+			y: offsetHeight / 2
+		};
+		let mouseRelative = {
+			x: 0,
+			y: 0
+		};
+		console.log(offsetWidth, offsetHeight);
+		console.log(center.x, center.y);
+		// node.style.perspectiveOrigin = 'center';
+
+		function onMousemove(event) {
+			mouseRelative.x = event.offsetX - center.x;
+			mouseRelative.y = event.offsetY - center.y;
+			console.log(mouseRelative);
+			node.style.transform = `rotateY(${mouseRelative.x / 16}deg) rotateX(${
+				mouseRelative.y / 16
+			}deg)`;
+		}
+
+		node.addEventListener('mousemove', onMousemove);
+
+		return {
+			destroy() {
+				node.removeEventListener('mousemove', onMousemove);
+			}
+		};
+	}
+	// End Rockable
 </script>
 
 <SEO
@@ -51,9 +85,17 @@
 />
 <article class="grid lg:grid-cols-2 justify-center content-start p-4 text-lg lg:gap-4">
 	<section class="p-2 lg:w-5/6 xl:w-3/4 justify-self-end">
-		<a href={event.ticketPurchaseUrl}>
-			<img src={event.flyer.url} alt="{event.title} flyer" class="rounded-sm box-content" />
-		</a>
+		<div use:rockable class="block relative" style="perspective(1000px)">
+			<div
+				class="absolute inset-0 w-full h-full"
+				style="background-color: {event.accentColor.hex};"
+			/>
+			<div class="relative" style="transform: translateZ(60px)">
+				<a href={event.ticketPurchaseUrl}>
+					<img src={event.flyer.url} alt="{event.title} flyer" class="rounded-sm" />
+				</a>
+			</div>
+		</div>
 	</section>
 	<section class="p-2 space-y-4 md:space-y-2 grout">
 		<div class="flex flex-col space-y-2 md:space-y-0 md:flex-row flex-wrap items-center">
