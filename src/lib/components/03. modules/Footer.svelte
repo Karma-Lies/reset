@@ -4,10 +4,7 @@
 	import SocialLinks from '../02. molecules/SocialLinks.svelte';
 </script>
 
-<div
-	class="h-2 w-full bg-gradient-to-r from-purple-400 via-red-500 to-yellow-400 drop-shadow-xl max-w-full 2xl:rounded-sm"
-/>
-<footer class="w-full p-8 space-y-4">
+<footer class="relative w-full p-8 space-y-6 lg:space-y-4">
 	<nav>
 		<ul class="flex space-y-6 lg:space-y-0 lg:justify-between flex-col lg:flex-row">
 			<li class="mx-auto lg:mx-0 lg:w-72">
@@ -57,5 +54,10 @@
 	}
 	.dim:hover {
 		@apply opacity-100;
+	}
+
+	footer::before {
+		content: '';
+		@apply h-2 w-full bg-gradient-to-r from-purple-400 via-red-500 to-yellow-400 drop-shadow-xl max-w-full 2xl:rounded-sm absolute top-0 left-0;
 	}
 </style>

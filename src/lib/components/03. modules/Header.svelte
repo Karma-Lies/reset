@@ -7,19 +7,19 @@
 	<nav
 		class="max-w-max mx-auto text-black dark:text-gray-100 text-lg drop-shadow-bonk-light dark:drop-shadow-bonk-dark pointer-events-auto"
 	>
-		<ul class="flex justify-evenly place-items-center space-x-4 font-heading">
-			<li class="w-16">
-				<a class="standard-link" sveltekit:prefetch href="/events"> events </a>
+		<ul class="flex justify-evenly place-items-center space-x-4 text-sm md:text-base font-heading">
+			<li class="w-16 text-right">
+				<a class="standard-link text-gray-200" sveltekit:prefetch href="/events"> events </a>
 			</li>
-			<li class="">
+			<li>
 				<h1 class="w-40 md:w-64">
 					<a sveltekit:prefetch href="/">
 						<Logo />
 					</a>
 				</h1>
 			</li>
-			<li class="w-16">
-				<a class="standard-link" sveltekit:prefetch href="/about"> about </a>
+			<li class="w-16 text-left">
+				<a class="standard-link text-gray-200" sveltekit:prefetch href="/about"> about </a>
 			</li>
 		</ul>
 	</nav>
