@@ -1,9 +1,10 @@
 <script>
 	// Component imports
 	import Discord from '$svg/Discord.svelte';
+	import Facebook from '$svg/Facebook.svelte';
+	import Github from '$svg/Github.svelte';
 	import Instagram from '$svg/Instagram.svelte';
 	import Twitter from '$svg/Twitter.svelte';
-	import Facebook from '$svg/Facebook.svelte';
 
 	// Props
 	export let size = 'regular';
@@ -11,14 +12,16 @@
 		{ type: 'Discord', href: 'https://discord.gg/p662j55GXr' },
 		{ type: 'Instagram', href: 'https://instagram.com/reset_presents/' },
 		{ type: 'Twitter', href: 'https://twitter.com/reset_presents' },
-		{ type: 'Facebook', href: 'https://www.facebook.com/resetpresents' }
+		{ type: 'Facebook', href: 'https://www.facebook.com/resetpresents' },
+		{ type: 'Github', href: 'https://github.com/karma-lies/reset' }
 	];
 
 	const iconMap = {
 		Discord: Discord,
+		Facebook: Facebook,
+		Github: Github,
 		Instagram: Instagram,
-		Twitter: Twitter,
-		Facebook: Facebook
+		Twitter: Twitter
 	};
 </script>
 
