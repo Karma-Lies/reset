@@ -17,7 +17,7 @@
 		"@poppanator/sveltekit-svg": "0.1.7",
 		"@sveltejs/adapter-netlify": "1.0.0-next.31",
 		"@sveltejs/adapter-static": "1.0.0-next.20",
-		"@sveltejs/kit": "1.0.0-next.173",
+		"@sveltejs/kit": "1.0.0-next.179",
 		"@vimeo/player": "^2.16.1",
 		"autoprefixer": "10.3.5",
 		"cssnano": "5.0.8",
@@ -29,11 +29,11 @@
 		"netlify-cli": "^6.9.28",
 		"postcss": "8.3.7",
 		"postcss-load-config": "3.1.0",
-		"prettier": "2.2.1",
+		"prettier": "2.4.1",
 		"prettier-plugin-svelte": "2.4.0",
-		"svelte": "3.43.0",
-		"svelte-preprocess": "4.9.5",
-		"tailwindcss": "2.2.15"
+		"svelte": "3.43.1",
+		"svelte-preprocess": "4.9.7",
+		"tailwindcss": "2.2.16"
 	},
 	"type": "module",
 	"dependencies": {
