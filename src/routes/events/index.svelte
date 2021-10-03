@@ -1,4 +1,6 @@
 <script context="module">
+	export const hydrate = false;
+
 	/**
 	 * @type {import('@sveltejs/kit').Load}
 	 */
@@ -32,6 +34,7 @@
 	// Props
 	export let stats;
 	export let path;
+	console.log('test');
 </script>
 
 <SEO
