@@ -34,7 +34,7 @@
 		class="before:right-0 before:left-0 before:top-0 before:h-full relative before:absolute before:from-crisp-dark before:via-transparent before:bg-gradient-to-b z-0"
 	>
 		<img
-			src="/static/photos/Fraxiom.jpeg"
+			src="/photos/Fraxiom.jpeg"
 			alt="Fraxiom in 2020"
 			width="1095"
 			height="1095"
