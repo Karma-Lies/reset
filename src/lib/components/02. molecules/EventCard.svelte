@@ -3,14 +3,21 @@
 	export let event;
 </script>
 
-<a sveltekit:prefetch href="/events/{event.year}/{event.slug}" class="group">
-	<div
-		class="absolute transition-transform transform translate-y-0 translate-x-0 top-0 left-0 group-hover:translate-x-1 group-hover:translate-y-1 rotate-0 group-hover:rotate-2 bg-gradient-to-t from-purple-400 to-pink-500 w-full h-full pointer-events-none z-0"
-	/>
-	<img
-		src={event.flyer.url}
-		alt="{event.title} flyer"
-		class="max-h-[50vh] min-h-[33vh] object-fit relative w-full z-10 border-2 border-white"
-	/>
-	<h3 class="sr-only">{event.title}</h3></a
->
+<div class="card">
+	<a sveltekit:prefetch href="/events/{event.year}/{event.slug}">
+		<img width={1500} height={1875} src={event.flyer.url} alt="{event.title} flyer" />
+		<h3 class="sr-only">{event.title}</h3></a
+	>
+</div>
+
+<style lang="postcss">
+	.card {
+		@apply w-full h-full;
+		@apply border-white border-2 translate-y-0 transition-transform;
+		@apply hover:-translate-y-2 hover:rotate-1;
+	}
+
+	img {
+		@apply h-full object-cover z-10 w-full;
+	}
+</style>
