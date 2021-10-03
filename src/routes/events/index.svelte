@@ -2,7 +2,7 @@
 	/**
 	 * @type {import('@sveltejs/kit').Load}
 	 */
-	export async function load({ fetch }) {
+	export async function load({ page, fetch }) {
 		const url = '/api/events.json?stats=true';
 		const res = await fetch(url);
 
@@ -11,7 +11,8 @@
 			return {
 				props: {
 					stats,
-					events
+					events,
+					path: page.path
 				}
 			};
 		}
@@ -24,10 +25,18 @@
 </script>
 
 <script>
+	// Component imports
+	import Breadcrumbs from '$lib/components/02. molecules/Breadcrumbs.svelte';
+
+	// Props
 	export let stats;
+	export let path;
 </script>
 
-<!-- 	class="md:justify-center pt-12 md:pt-0 h-full min-h-[40rem] space-y-3" -->
+<div class="mt-4">
+	<Breadcrumbs {path} />
+</div>
+
 <section id="upcoming-events">
 	<div
 		id="dope-gradient"
@@ -41,7 +50,7 @@
 			lazyload
 			class="w-5/6 lg:w-1/2 h-full min-h-[16rem] object-cover object-bottom pr-2"
 		/>
-		<p id="cta" class="z-10">pick a year</p>
+		<p id="cta" class="z-10 opacity-80">select a year</p>
 	</div>
 
 	<header>
@@ -52,7 +61,16 @@
 		{#each stats as metadata}
 			<li class="group">
 				<a href="/events/{metadata.year}">
-					<h3>{metadata.year}</h3>
+					<h3>
+						{metadata.year}<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							class="w-16 inline fill-current"
+							><path fill="none" d="M0 0h24v24H0z" /><path
+								d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+							/></svg
+						>
+					</h3>
 					<span
 						class="opacity-0 group-hover:opacity-100 text-sm absolute tracking-widest right-4 bottom-4 md:bottom-8 px-1 rounded-sm shadow-lg bg-indigo-700"
 						>explore {metadata.eventCount} {metadata.eventCount.length > 1 ? 'shows' : 'show'}</span
@@ -66,7 +84,7 @@
 
 <style lang="postcss">
 	section {
-		@apply grid grid-cols-2;
+		@apply grid grid-cols-2 pt-4;
 	}
 	#dope-gradient {
 		@apply flex justify-between col-start-1 col-end-3 w-full max-h-80 md:max-h-full pointer-events-none;
@@ -99,7 +117,7 @@
 	}
 	li {
 		@apply relative mx-auto max-w-max;
-		@apply hover:text-yellow-400 transition-colors bg-transparent hover:bg-crisp-dark rounded-sm px-2;
+		@apply hover:text-yellow-400 transition-colors bg-transparent rounded-sm px-2;
 		@apply even:text-indigo-600 hover:even:text-yellow-400;
 	}
 </style>

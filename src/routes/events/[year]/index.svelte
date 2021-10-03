@@ -38,7 +38,10 @@
 	const upcomingEvents = events.filter((event) => new Date(event.startTime) >= currentDate);
 </script>
 
-<Breadcrumbs {path} />
+<div class="mt-4">
+	<Breadcrumbs {path} />
+</div>
+
 {#if upcomingEvents.length > 0}
 	<section id="upcoming-events" class="max-w-screen-lg mx-auto p-4">
 		<GridCard {events}>Upcoming Events</GridCard>
