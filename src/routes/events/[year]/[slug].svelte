@@ -25,6 +25,7 @@
 
 <script>
 	// Component imports
+	import ArrowLink from '$lib/components/01. atoms/ArrowLink.svelte';
 	import SEO from '$lib/components/01. atoms/SEO.svelte';
 	import ArtistList from '$lib/components/02. molecules/ArtistList.svelte';
 
@@ -33,7 +34,10 @@
 	export let year;
 	export let slug;
 
-	const startTime = new Date(event.startTime).toLocaleString('en-US', {
+	const currentTime = new Date();
+	const eventStartTime = new Date(event.startTime);
+	const eventEndTime = new Date(event.endTime);
+	const startTimeString = eventStartTime.toLocaleString('en-US', {
 		weekday: 'short',
 		year: 'numeric',
 		month: 'long',
@@ -41,40 +45,7 @@
 		hour: '2-digit',
 		minute: '2-digit'
 	});
-
-	// Rockable
-	function rockable(node) {
-		let { offsetWidth, offsetHeight } = node;
-		let center = {
-			x: offsetWidth / 2,
-			y: offsetHeight / 2
-		};
-		let mouseRelative = {
-			x: 0,
-			y: 0
-		};
-		console.log(offsetWidth, offsetHeight);
-		console.log(center.x, center.y);
-		// node.style.perspectiveOrigin = 'center';
-
-		function onMousemove(event) {
-			mouseRelative.x = event.offsetX - center.x;
-			mouseRelative.y = event.offsetY - center.y;
-			console.log(mouseRelative);
-			node.style.transform = `rotateY(${mouseRelative.x / 16}deg) rotateX(${
-				mouseRelative.y / 16
-			}deg)`;
-		}
-
-		node.addEventListener('mousemove', onMousemove);
-
-		return {
-			destroy() {
-				node.removeEventListener('mousemove', onMousemove);
-			}
-		};
-	}
-	// End Rockable
+	const ticketButtonCTA = eventEndTime >= currentTime ? 'Get Tickets' : 'Sold Out';
 </script>
 
 <SEO
@@ -83,38 +54,59 @@
 	url="events/{year}/{slug}"
 	image={{ src: event.flyer.url, alt: `${event.title} flyer` }}
 />
-<article class="grid lg:grid-cols-2 justify-center content-start p-4 text-lg lg:gap-4">
+<aside class="px-6 font-medium tracking-wide text-sm uppercase max-w-max m-auto text-gray-500">
+	<ArrowLink isBack={true} href="/events/{year}"
+		><a href="/events" sveltekit:prefetch class="hover:text-gray-400">events</a> /
+		<span class="text-gray-700 hover:text-gray-600">{year}</span></ArrowLink
+	>
+</aside>
+<article class="grid lg:grid-cols-2 justify-center content-start p-4 pt-4 text-lg lg:gap-4">
 	<section class="p-2 lg:w-5/6 xl:w-3/4 justify-self-end">
-		<div use:rockable class="block relative" style="perspective(1000px)">
-			<div
-				class="absolute inset-0 w-full h-full"
-				style="background-color: {event.accentColor.hex};"
-			/>
-			<div class="relative" style="transform: translateZ(60px)">
-				<a href={event.ticketPurchaseUrl}>
-					<img src={event.flyer.url} alt="{event.title} flyer" class="rounded-sm" />
-				</a>
-			</div>
+		<div>
+			<a href={event.ticketPurchaseUrl}>
+				<img src={event.flyer.url} alt="{event.title} flyer" class="rounded-sm" />
+			</a>
 		</div>
 	</section>
 	<section class="p-2 space-y-4 md:space-y-2 grout">
-		<div class="flex flex-col space-y-2 md:space-y-0 md:flex-row flex-wrap items-center">
+		<div
+			class="flex flex-col space-y-2 md:space-y-0 md:flex-row flex-wrap items-center md:space-x-2"
+		>
 			<h1
 				name="title"
-				class="text-6xl font-heading md:mr-4"
+				class="text-6xl font-heading md:mr-4 text-center lg:text-left"
 				style="margin-top: calc((1 - 1.25) * 0.5em);"
 			>
 				{event.title}
 			</h1>
-			<a target="_blank" name="tickets" class="ticket-purchase" href={event.ticketPurchaseUrl}
-				>Get Tickets</a
+			<a
+				target="_blank"
+				name="tickets"
+				class="ticket-purchase flex flex-row space-x-1.5"
+				href={event.ticketPurchaseUrl}
+				><span>{ticketButtonCTA}</span>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="3"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="inline w-4 m-auto opacity-30"
+					><path
+						d="M13.544 10.456a4.368 4.368 0 0 0-6.176 0l-3.089 3.088a4.367 4.367 0 1 0 6.177 6.177L12 18.177"
+					/><path
+						d="M10.456 13.544a4.368 4.368 0 0 0 6.176 0l3.089-3.088a4.367 4.367 0 1 0-6.177-6.177L12 5.823"
+					/></svg
+				></a
 			>
 		</div>
 		<h2 class="sr-only">Details</h2>
 		<ul>
 			<li>
 				<h3>Start Time</h3>
-				<p id="start-time">{startTime}</p>
+				<p id="start-time">{startTimeString}</p>
 			</li>
 			<li>
 				<h3>Address</h3>
@@ -125,8 +117,8 @@
 				<ArtistList />
 			</li>
 			<li class="space-y-2">
-				<h3>Description</h3>
-				<div id="description" class="space-y-3 text-sm max-w-prose">
+				<h3>Notes</h3>
+				<div id="notes" class="space-y-3 text-sm max-w-prose">
 					{@html event.description.html}
 				</div>
 			</li>
@@ -139,10 +131,7 @@
 		@apply text-gray-700 max-w-max tracking-wide font-semibold text-sm;
 	}
 	.ticket-purchase {
-		@apply p-2 self-center max-w-max text-xl rounded-sm transition-colors;
-		@apply bg-gradient-to-r from-indigo-50 to-pink-50;
-		@apply dark:from-purple-700 dark:to-purple-600 dark:text-white dark:hover:from-purple-800 dark:hover:to-purple-700;
-		@apply border-2 border-black dark:border-purple-600 dark:hover:border-purple-400;
+		@apply max-w-max px-3 py-2 font-semibold transition-all rounded-sm bg-gray-100 hover:bg-gray-700 hover:text-white w-full text-black drop-shadow-sm;
 	}
 	.grout > ul {
 		@apply divide-y-2 divide-gray-800 divide-opacity-20 border-2 border-gray-800 border-opacity-20 text-gray-300;
@@ -150,10 +139,10 @@
 	li {
 		@apply p-2;
 	}
-	:global(#description > p > a) {
-		@apply text-black dark:text-purple-300 font-semibold hover:text-purple-600 border-b-2 border-transparent hover:border-purple-600 transition-colors;
+	:global(#notes > p > a) {
+		@apply text-black dark:text-gray-200 font-semibold hover:text-purple-600 border-b-2 border-transparent hover:border-purple-600 transition-colors;
 	}
-	:global(#description > p > a::after) {
+	:global(#notes > p > a::after) {
 		content: '🔗';
 		@apply text-xs -top-0.5 left-0.5 relative;
 	}
