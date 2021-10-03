@@ -25,6 +25,7 @@
 
 <script>
 	// Component imports
+	import SEO from '$lib/components/01. atoms/SEO.svelte';
 	import Breadcrumbs from '$lib/components/02. molecules/Breadcrumbs.svelte';
 	import GridCard from '$lib/components/03. modules/CardGrid.svelte';
 
@@ -37,6 +38,12 @@
 	const currentDate = new Date();
 	const upcomingEvents = events.filter((event) => new Date(event.startTime) >= currentDate);
 </script>
+
+<SEO
+	title="{year} Events"
+	description="Underground shows in Chicago dedicated to putting on under-appreciated talent."
+	url="events/{year}"
+/>
 
 <div class="mt-4">
 	<Breadcrumbs {path} />

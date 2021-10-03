@@ -26,12 +26,19 @@
 
 <script>
 	// Component imports
+	import SEO from '$lib/components/01. atoms/SEO.svelte';
 	import Breadcrumbs from '$lib/components/02. molecules/Breadcrumbs.svelte';
 
 	// Props
 	export let stats;
 	export let path;
 </script>
+
+<SEO
+	title="Explore Our Events"
+	description="Underground shows in Chicago dedicated to putting on under-appreciated talent."
+	url="events"
+/>
 
 <div class="mt-4">
 	<Breadcrumbs {path} />
