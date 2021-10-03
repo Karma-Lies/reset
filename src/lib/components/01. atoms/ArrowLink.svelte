@@ -2,6 +2,7 @@
 	// Props
 	export let href;
 	export let isBack = false;
+	export let vertical = false;
 </script>
 
 <a sveltekit:prefetch {href} class="group">
@@ -16,7 +17,7 @@
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			class="backwards"><path d="M6 18L18 6" /><path d="M6 8v10h10" /></svg
+			class={vertical ? 'upwards' : 'backwards'}><path d="M6 18L18 6" /><path d="M6 8v10h10" /></svg
 		>
 		<slot />
 	{:else}
@@ -31,19 +32,29 @@
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			class="forwards"><path d="M18 18L6 6" /><path d="M8 18h10V8" /></svg
+			class={vertical ? 'downwards' : 'forwards'}
+			><path d="M18 18L6 6" /><path d="M8 18h10V8" /></svg
 		>
 	{/if}
 </a>
 
 <style lang="postcss">
+	a {
+		@apply opacity-100 hover:opacity-90 transition-opacity duration-200;
+	}
 	svg {
-		@apply inline w-6 h-6 -ml-1 transition-all group-hover:fill-current translate-x-0;
+		@apply inline w-6 h-6 -ml-1 transition-all duration-200 group-hover:fill-current translate-x-0;
 	}
 	.forwards {
 		@apply group-hover:translate-x-1;
 	}
 	.backwards {
 		@apply group-hover:-translate-x-1;
+	}
+	.upwards {
+		@apply group-hover:-translate-y-1;
+	}
+	.downwards {
+		@apply group-hover:translate-y-1;
 	}
 </style>
