@@ -17,8 +17,12 @@
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			class={vertical ? 'upwards' : 'backwards'}><path d="M6 18L18 6" /><path d="M6 8v10h10" /></svg
+			class={vertical ? 'upwards' : 'backwards'}
 		>
+			<path d="M6 18L18 6" />
+			<path d="M6 8v10h10" />
+			<path d="M6 8L16 18" class="opacity-0 group-hover:opacity-100 transition-opacity" />
+		</svg>
 		<slot />
 	{:else}
 		<slot />
@@ -33,8 +37,11 @@
 			stroke-linecap="round"
 			stroke-linejoin="round"
 			class={vertical ? 'downwards' : 'forwards'}
-			><path d="M18 18L6 6" /><path d="M8 18h10V8" /></svg
 		>
+			<path d="M18 18L6 6" />
+			<path d="M8 18h10V8" />
+			<path d="M18 8L8 18" class="opacity-0 group-hover:opacity-100 transition-opacity" />
+		</svg>
 	{/if}
 </a>
 
