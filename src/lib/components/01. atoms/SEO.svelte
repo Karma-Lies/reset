@@ -1,3 +1,7 @@
+<script context="module">
+	export const hydrate = false;
+</script>
+
 <script>
 	// Props
 	export let sitename = 'Reset Presents';
