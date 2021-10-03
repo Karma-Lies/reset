@@ -25,7 +25,7 @@
 <script>
 	// Component imports
 	import SEO from '$lib/components/01. atoms/SEO.svelte';
-	import LabeledSlider from './../lib/components/03. modules/LabeledSlider.svelte';
+	import CardGrid from '../lib/components/03. modules/CardGrid.svelte';
 
 	// Props
 	export let events;
@@ -33,4 +33,6 @@
 
 <SEO prefixSiteName />
 
-<LabeledSlider id="upcoming-events" href="/events" {events}>Upcoming Events</LabeledSlider>
+<section id="upcoming-events" class="max-w-screen-lg mx-auto">
+	<CardGrid href="/events?upcoming" {events}>Upcoming Events</CardGrid>
+</section>

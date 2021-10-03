@@ -10,7 +10,7 @@
 
 <div class="relative flex flex-col min-h-screen mx-auto font-general max-w-screen-2xl">
 	<Header />
-	<main class="flex-1 my-8 min-h-[40rem]">
+	<main class="flex-1 relative">
 		<slot />
 	</main>
 	<Newsletter />
@@ -19,7 +19,7 @@
 
 <style global lang="postcss">
 	body {
-		@apply selection:bg-purple-800;
+		@apply selection:bg-indigo-600;
 	}
 	.standard-link {
 		@apply border-b-2 border-transparent;

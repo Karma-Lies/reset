@@ -9,7 +9,9 @@
 		if (res.ok) {
 			return {
 				props: {
-					events: await res.json()
+					events: await res.json(),
+					year: page.params.year,
+					path: page.path
 				}
 			};
 		}
@@ -23,16 +25,25 @@
 
 <script>
 	// Component imports
-	import LabeledSlider from '$lib/components/03. modules/LabeledSlider.svelte';
+	import Breadcrumbs from '$lib/components/02. molecules/Breadcrumbs.svelte';
+	import GridCard from '$lib/components/03. modules/CardGrid.svelte';
 
 	// Props
 	export let events;
+	export let year;
+	export let path;
 
 	// Logic
 	const currentDate = new Date();
 	const upcomingEvents = events.filter((event) => new Date(event.startTime) >= currentDate);
 </script>
 
+<Breadcrumbs {path} />
 {#if upcomingEvents.length > 0}
-	<LabeledSlider id="upcoming-events" href="/events" {events}>Upcoming Events</LabeledSlider>
+	<section id="upcoming-events" class="max-w-screen-lg mx-auto p-4">
+		<GridCard {events}>Upcoming Events</GridCard>
+	</section>
 {/if}
+<section id="events" class="max-w-screen-lg mx-auto p-4">
+	<GridCard {events}>{year} Events</GridCard>
+</section>
