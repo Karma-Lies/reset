@@ -27,9 +27,22 @@ export async function get({ params }) {
 						b
 					}
 				}
+				artists {
+					name
+					slug
+					spotifyArtistId
+					socialLinks {
+						id
+						type
+						href
+					}
+				}
 				description {
 					html
 					text
+				}
+				recap {
+					videoURL
 				}
 			}
 		}
@@ -39,7 +52,27 @@ export async function get({ params }) {
 		slug: slug
 	};
 
-	const { event } = await graphcms.request(query, variables);
+	let { event } = await graphcms.request(query, variables);
+
+	event = {
+		...event,
+		artists: event.artists.map((artist) => {
+			const updatedLinks = [
+				...artist.socialLinks,
+				artist.spotifyArtistId
+					? {
+							id: artist.spotifyArtistId,
+							type: 'Spotify',
+							href: 'https://open.spotify.com/artist/' + artist.spotifyArtistId
+					  }
+					: null
+			];
+			return {
+				...artist,
+				socialLinks: updatedLinks
+			};
+		})
+	};
 
 	return {
 		body: event

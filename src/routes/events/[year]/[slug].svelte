@@ -11,7 +11,8 @@
 				props: {
 					event: await res.json(),
 					year: page.params.year,
-					slug: page.params.slug
+					slug: page.params.slug,
+					path: page.path
 				}
 			};
 		}
@@ -25,14 +26,16 @@
 
 <script>
 	// Component imports
-	import ArrowLink from '$lib/components/01. atoms/ArrowLink.svelte';
 	import SEO from '$lib/components/01. atoms/SEO.svelte';
+	import Breadcrumbs from '$lib/components/02. molecules/Breadcrumbs.svelte';
 	import ArtistList from '$lib/components/02. molecules/ArtistList.svelte';
+	import VimeoVideo from '$lib/components/01. atoms/VimeoVideo.svelte';
 
 	// Props
 	export let event;
 	export let year;
 	export let slug;
+	export let path;
 
 	const currentTime = new Date();
 	const eventStartTime = new Date(event.startTime);
@@ -54,15 +57,13 @@
 	url="events/{year}/{slug}"
 	image={{ src: event.flyer.url, alt: `${event.title} flyer` }}
 />
-<aside class="px-6 font-medium tracking-wide text-sm uppercase max-w-max m-auto text-gray-500">
-	<ArrowLink isBack={true} href="/events/{year}"
-		><a href="/events" sveltekit:prefetch class="hover:text-gray-400">events</a> /
-		<span class="text-gray-700 hover:text-gray-600">{year}</span></ArrowLink
-	>
-</aside>
-<article class="grid lg:grid-cols-2 justify-center content-start p-4 pt-4 text-lg lg:gap-4">
+
+<div class="mt-4">
+	<Breadcrumbs {path} />
+</div>
+<article class="grid lg:grid-cols-2 justify-center content-start p-4 text-lg lg:gap-4 mb-4">
 	<section class="p-2 lg:w-5/6 xl:w-3/4 justify-self-end">
-		<div>
+		<div id="flyer">
 			<a href={event.ticketPurchaseUrl}>
 				<img src={event.flyer.url} alt="{event.title} flyer" class="rounded-sm" />
 			</a>
@@ -79,12 +80,8 @@
 			>
 				{event.title}
 			</h1>
-			<a
-				target="_blank"
-				name="tickets"
-				class="ticket-purchase flex flex-row space-x-1.5"
-				href={event.ticketPurchaseUrl}
-				><span>{ticketButtonCTA}</span>
+			<a target="_blank" name="tickets" class="ticket-purchase" href={event.ticketPurchaseUrl}
+				><span class="align-middle ">{ticketButtonCTA}</span>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 24 24"
@@ -93,7 +90,7 @@
 					stroke-width="3"
 					stroke-linecap="round"
 					stroke-linejoin="round"
-					class="inline w-4 m-auto opacity-30"
+					class="inline align-middle w-4 py-1 opacity-30"
 					><path
 						d="M13.544 10.456a4.368 4.368 0 0 0-6.176 0l-3.089 3.088a4.367 4.367 0 1 0 6.177 6.177L12 18.177"
 					/><path
@@ -112,16 +109,28 @@
 				<h3>Address</h3>
 				<p id="address">{event.address}</p>
 			</li>
-			<li class="space-y-2">
-				<h3>Artists</h3>
-				<ArtistList />
-			</li>
-			<li class="space-y-2">
-				<h3>Notes</h3>
-				<div id="notes" class="space-y-3 text-sm max-w-prose">
-					{@html event.description.html}
-				</div>
-			</li>
+			{#if event.artists}
+				<li>
+					<h3>Artists</h3>
+					<ArtistList artists={event.artists} />
+				</li>
+			{/if}
+			{#if event.description}
+				<li class="space-y-1.5">
+					<h3>Notes</h3>
+					<div id="notes" class="space-y-3 text-sm max-w-prose">
+						{@html event.description.html}
+					</div>
+				</li>
+			{/if}
+			{#if event.recap?.videoURL}
+				<li class="space-y-2">
+					<h3>Recap</h3>
+					<div id="recap" class="max-w-prose">
+						<VimeoVideo src={event.recap.videoURL} color={event.accentColor.hex} />
+					</div>
+				</li>
+			{/if}
 		</ul>
 	</section>
 </article>

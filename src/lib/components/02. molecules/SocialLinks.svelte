@@ -5,6 +5,9 @@
 	import Github from '$svg/Github.svelte';
 	import Instagram from '$svg/Instagram.svelte';
 	import Twitter from '$svg/Twitter.svelte';
+	import Soundcloud from '$lib/assets/svg/Soundcloud.svelte';
+	import Bandcamp from '$lib/assets/svg/Bandcamp.svelte';
+	import Spotify from '$lib/assets/svg/Spotify.svelte';
 
 	// Props
 	export let size = 'regular';
@@ -21,7 +24,10 @@
 		Facebook: Facebook,
 		Github: Github,
 		Instagram: Instagram,
-		Twitter: Twitter
+		Twitter: Twitter,
+		Soundcloud: Soundcloud,
+		Bandcamp: Bandcamp,
+		Spotify: Spotify
 	};
 </script>
 
