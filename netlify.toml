@@ -1,4 +1,9 @@
+[dev]
+  autoLaunch = false
+
+[functions]
+  directory = "functions"
+  
 [build]
   command = "npm run build"
-  publish = "build/"
-  functions = "functions/"
+  publish = "build"

@@ -34,7 +34,6 @@
 	// Props
 	export let stats;
 	export let path;
-	console.log('test');
 </script>
 
 <SEO

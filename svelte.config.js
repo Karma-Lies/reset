@@ -14,12 +14,6 @@ const config = {
 		}),
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
-		// prerender: {
-		// 	crawl: true,
-		// 	enabled: true,
-		// 	force: true,
-		// 	pages: ['/events', '/events/2021/']
-		// },
 		vite: {
 			// Options are optional
 			plugins: [svg()],

@@ -12,6 +12,7 @@
 		"src/**/*.js",
 		"src/**/*.svelte",
 		"src/routes/events/[year]/[slug].json.mjs",
-		"src/routes/events/[year]/[slug].json.ts"
+		"src/routes/events/[year]/[slug].json.ts",
+		"functions/**/*.js"
 	]
 }
