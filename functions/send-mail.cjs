@@ -13,59 +13,77 @@ exports.handler = async (event) => {
 	if (!process.env.VITE_CONTACT_EMAIL) {
 		return {
 			statusCode: 500,
-			body: 'process.env.CONTACT_EMAIL must be defined'
+			body: JSON.stringify({
+				message: 'Contact email is not defined'
+			})
 		};
 	}
 
 	const body = JSON.parse(event.body);
 
 	try {
-		validateLength('body.name', body.name, NAME_MIN_LENGTH, NAME_MAX_LENGTH);
+		validateLength('Name', body.name, NAME_MIN_LENGTH, NAME_MAX_LENGTH);
 	} catch (error) {
 		return {
 			statusCode: 403,
-			body: error.message
+			body: JSON.stringify({
+				message: error.message
+			})
 		};
 	}
 
 	try {
-		validateEmail('body.email', body.email);
+		validateEmail('Email', body.email);
 	} catch (error) {
 		return {
 			statusCode: 403,
-			body: error.message
+			body: JSON.stringify({
+				message: error.message
+			})
 		};
 	}
 
 	try {
-		validateLength('body.details', body.details, DETAILS_MIN_LENGTH, DETAILS_MAX_LENGTH);
+		validateLength('Details', body.details, DETAILS_MIN_LENGTH, DETAILS_MAX_LENGTH);
 	} catch (error) {
 		return {
 			statusCode: 403,
-			body: error.message
+			body: JSON.stringify({
+				message: error.message
+			})
 		};
 	}
 
+	// Email schema forming
 	const message = {
 		to: process.env.VITE_CONTACT_EMAIL,
 		from: 'team@resetpresents.com', // Verified sender
 		subject: `${body.name} - submitted contact form`,
 		text: `${body.details}\n\n- ${body.name} (${body.email})`
 	};
-	console.log('message', message);
 
 	try {
+		// Try to send the email
 		await sgMail.send(message);
 		return {
 			statusCode: 200,
 			body: JSON.stringify({
-				data: 'Message sent!'
+				message: 'We received your message, thanks for reaching out!'
 			})
 		};
 	} catch (error) {
+		// Wallow in pain
+		console.error(error);
+
+		if (error.response) {
+			console.error(error.response.body);
+		}
+
 		return {
 			statusCode: 500,
-			body: error
+			body: JSON.stringify({
+				message: 'Whoops! Funky server error :('
+			})
 		};
 	}
 };
