@@ -65,7 +65,7 @@
 			// Get the error status code and message from the response
 			sendMailResponse = {
 				status: error.response.status,
-				message: error.response.data.message
+				message: error.response.data.message || error.toJSON().message
 			};
 
 			// Flip the submit button to an error state
@@ -113,6 +113,7 @@
 					name="name"
 					id="name"
 					type="name"
+					autocomplete="name"
 					placeholder="Name"
 					maxlength="320"
 					spellcheck="off"
@@ -126,6 +127,7 @@
 					name="email"
 					id="email"
 					type="email"
+					autocomplete="email"
 					placeholder="Email address"
 					maxlength="320"
 					spellcheck="off"
@@ -156,17 +158,13 @@
 					{buttonInnerText}
 				</button>
 				{#if sendMailResponse.message && sendMailResponse.status === 200}
-					<pre>
-						<code class="text-indigo-500">
-							{sendMailResponse.message}
-						</code>
-					</pre>
+					<span class="font-mono text-indigo-500">
+						{sendMailResponse.message}
+					</span>
 				{:else if sendMailResponse.message}
-					<pre>
-						<code class="text-red-500">
-							{sendMailResponse.message}
-						</code>
-					</pre>
+					<span class="font-mono text-red-500">
+						{sendMailResponse.message}
+					</span>
 				{/if}
 			</div>
 		</form>
