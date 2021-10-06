@@ -8,6 +8,7 @@
 	import Soundcloud from '$lib/assets/svg/Soundcloud.svelte';
 	import Bandcamp from '$lib/assets/svg/Bandcamp.svelte';
 	import Spotify from '$lib/assets/svg/Spotify.svelte';
+	import Website from '$lib/assets/svg/Website.svelte';
 
 	// Props
 	export let size = 'regular';
@@ -27,7 +28,8 @@
 		Twitter: Twitter,
 		Soundcloud: Soundcloud,
 		Bandcamp: Bandcamp,
-		Spotify: Spotify
+		Spotify: Spotify,
+		Website: Website
 	};
 </script>
 
