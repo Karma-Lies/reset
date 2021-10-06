@@ -174,7 +174,13 @@
 <style lang="postcss">
 	#visual::after {
 		content: '';
-		background: repeating-linear-gradient(-45deg, transparent 0 24px, rgba(79, 70, 229) 24px 32px);
+		background: repeating-linear-gradient(
+			-45deg,
+			#4f46e5,
+			#4f46e5 12px,
+			transparent 12px,
+			transparent 24px
+		);
 		@apply absolute -top-4 lg:top-auto -right-4 lg:right-auto lg:-bottom-4 lg:-left-4 w-28 h-28 md:w-48 md:h-48;
 	}
 
