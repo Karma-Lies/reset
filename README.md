@@ -2,7 +2,9 @@
 
 # ✨ RESET ⚡️
 
-The online experience for the Chicago event organization, Reset Presents, powered by [SvelteKit](https://github.com/sveltejs/kit);
+The online experience for the premiere Chicago event organization for underground talent, Reset Presents.
+This project focuses on rethinking how a minimal production company website can appear and behave.
+It's built with [SvelteKit](https://github.com/sveltejs/kit) on the JAMstack and made to scale.
 
 ## ⚙️ Developing
 
