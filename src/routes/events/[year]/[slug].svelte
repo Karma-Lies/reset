@@ -150,7 +150,7 @@
 		@apply p-2;
 	}
 	:global(#notes > p > a) {
-		@apply text-black dark:text-gray-200 font-semibold hover:text-purple-600 border-b-2 border-transparent hover:border-purple-600 transition-colors;
+		@apply text-gray-200 font-semibold hover:text-purple-500 border-b-2 border-transparent hover:border-purple-600 transition-colors;
 	}
 	:global(#notes > p > a::after) {
 		content: '🔗';
