@@ -2,7 +2,7 @@ const colors = require('tailwindcss/colors');
 
 const config = {
 	mode: 'jit',
-	darkMode: 'media',
+	darkMode: 'class',
 	purge: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		colors: {

@@ -57,20 +57,23 @@ export async function get({ params }) {
 	event = {
 		...event,
 		artists: event.artists.map((artist) => {
-			const updatedLinks = [
-				...artist.socialLinks,
-				artist.spotifyArtistId
-					? {
-							id: artist.spotifyArtistId,
-							type: 'Spotify',
-							href: 'https://open.spotify.com/artist/' + artist.spotifyArtistId
-					  }
-					: null
-			];
-			return {
-				...artist,
-				socialLinks: updatedLinks
-			};
+			if (artist.spotifyArtistId) {
+				const updatedLinks = [
+					...artist.socialLinks,
+					artist.spotifyArtistId
+						? {
+								id: artist.spotifyArtistId,
+								type: 'Spotify',
+								href: 'https://open.spotify.com/artist/' + artist.spotifyArtistId
+						  }
+						: null
+				];
+				return {
+					...artist,
+					socialLinks: updatedLinks
+				};
+			}
+			return artist;
 		})
 	};
 

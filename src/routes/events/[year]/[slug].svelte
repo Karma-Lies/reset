@@ -39,7 +39,8 @@
 
 	const currentTime = new Date();
 	const eventStartTime = new Date(event.startTime);
-	const eventEndTime = new Date(event.endTime);
+	const eventEndTime = new Date(event.endTime ?? 0);
+	const eventTimeAnchor = Math.max(eventStartTime, eventEndTime);
 	const startTimeString = eventStartTime.toLocaleString('en-US', {
 		weekday: 'short',
 		year: 'numeric',
@@ -48,7 +49,7 @@
 		hour: '2-digit',
 		minute: '2-digit'
 	});
-	const ticketButtonCTA = eventEndTime >= currentTime ? 'Get Tickets' : 'Sold Out';
+	const ticketButtonCTA = eventTimeAnchor >= currentTime ? 'Get Tickets' : 'Sold Out';
 </script>
 
 <SEO
@@ -61,7 +62,7 @@
 <div class="mt-4">
 	<Breadcrumbs {path} />
 </div>
-<article class="grid lg:grid-cols-2 justify-center content-start p-4 text-lg lg:gap-4 mb-4">
+<article class="grid content-start justify-center p-4 mb-4 text-lg lg:grid-cols-2 lg:gap-4">
 	<section class="p-2 lg:w-5/6 xl:w-3/4 justify-self-end">
 		<div id="flyer">
 			<a href={event.ticketPurchaseUrl}>
@@ -71,11 +72,11 @@
 	</section>
 	<section class="p-2 space-y-4 md:space-y-2 grout">
 		<div
-			class="flex flex-col space-y-2 md:space-y-0 md:flex-row flex-wrap items-center md:space-x-2"
+			class="flex flex-col flex-wrap items-center space-y-2 md:space-y-0 md:flex-row md:space-x-2"
 		>
 			<h1
 				name="title"
-				class="text-6xl font-heading md:mr-4 text-center lg:text-left"
+				class="text-6xl text-center font-heading md:mr-4 lg:text-left"
 				style="margin-top: calc((1 - 1.25) * 0.5em);"
 			>
 				{event.title}
@@ -90,7 +91,7 @@
 					stroke-width="3"
 					stroke-linecap="round"
 					stroke-linejoin="round"
-					class="inline align-middle w-4 py-1 opacity-30"
+					class="inline w-4 py-1 align-middle opacity-30"
 					><path
 						d="M13.544 10.456a4.368 4.368 0 0 0-6.176 0l-3.089 3.088a4.367 4.367 0 1 0 6.177 6.177L12 18.177"
 					/><path
