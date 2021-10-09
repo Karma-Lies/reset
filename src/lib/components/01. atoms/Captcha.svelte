@@ -1,10 +1,14 @@
 <script>
+	// Component imports
+	import Button from '$lib/components/01. atoms/Button.svelte';
+	// Library imports
 	import axios from 'axios';
 	import { createEventDispatcher } from 'svelte';
 
 	// Props
 	export let numOptions = 4;
-	// Animal taxonomy
+
+	// --- Animal taxonomy --- //
 	const animalOptions = [
 		{
 			type: 'cat',
@@ -20,25 +24,43 @@
 	let animalToPick = animalOptions[Math.round(Math.random())];
 	$: pluralAnimalToPick = animalToPick.plural;
 
-	// API fetching
-	const challengeFetch = Promise.all(randomizePromises(numOptions));
+	// --- API fetching --- //
+	const challengeFetch = () => Promise.all(randomizePromises(numOptions));
+	let challenge = challengeFetch();
 
+	/**
+	 * Pseudo-randomly calls an API and returns a promise
+	 */
 	function randomAPICall() {
 		return Math.random() < 0.5 ? fetchKitty() : fetchFox();
 	}
 
-	function randomizePromises(numOptions) {
+	/**
+	 * Returns an array of specific length containing random API fetch promises
+	 * @param numElements length of array
+	 */
+	function randomizePromises(numElements) {
 		let promises = [];
 
-		for (let i = 0; i < numOptions; i++) {
+		for (let i = 0; i < numElements; i++) {
 			promises.push(randomAPICall());
 		}
 
 		return promises;
 	}
 
+	/**
+	 * Return current time in milliseconds
+	 */
+	function timestamp() {
+		return new Date().getTime();
+	}
+
+	/**
+	 * Fetch a random cat image
+	 */
 	async function fetchKitty() {
-		const endpoint = 'https://aws.random.cat/meow';
+		const endpoint = 'https://aws.random.cat/meow?cachebuster=' + timestamp();
 		const type = 'certified_mowmow';
 		try {
 			const catPic = await axios.get(endpoint);
@@ -57,8 +79,11 @@
 		}
 	}
 
+	/**
+	 * Fetch a random fox image
+	 */
 	async function fetchFox() {
-		const endpoint = 'https://randomfox.ca/floof/';
+		const endpoint = 'https://randomfox.ca/floof/?cachebuster=' + timestamp();
 		const type = 'cat_dog';
 		try {
 			const catPic = await axios.get(endpoint);
@@ -77,7 +102,21 @@
 		}
 	}
 
-	// User selection verification
+	// --- State --- //
+	let state = 'default';
+	let feedbackStates = {
+		error: 'Incorrect answer, try again!',
+		success: "Correct, you're verified!",
+		default: '(this is to prevent bots)'
+	};
+	$: feedbackMessage = feedbackStates[state];
+	let buttonStates = {
+		error: 'Try again',
+		success: 'Verified!',
+		default: 'Done'
+	};
+
+	// --- User selection verification --- //
 	let userSelection = [];
 	const dispatch = createEventDispatcher();
 
@@ -94,15 +133,37 @@
 		);
 	}
 
+	/**
+	 * Compares user selection to the set of correct choices, verifies response if the two contain the same elements
+	 * @returns {boolean} isUserCorrect
+	 */
 	async function verifyAnswer() {
-		const challengeSet = await challengeFetch;
+		const challengeSet = await challenge;
+
 		const correctChoices = challengeSet.filter(
 			(animal) => animal.type === animalToPick.obscurification
 		);
 
 		const isUserCorrect = matchArrayContents(correctChoices, userSelection);
-		dispatch('verified', isUserCorrect);
-		return isUserCorrect;
+
+		if (isUserCorrect) {
+			state = 'success';
+		} else {
+			state = 'error';
+			refreshChallenge();
+		}
+
+		return setTimeout(() => dispatch('verified', isUserCorrect), 500);
+	}
+
+	/**
+	 * Present a new challenge and clear user input
+	 */
+	function refreshChallenge() {
+		userSelection = [];
+		challenge = challengeFetch();
+		// Reset the state after 3 seconds so the user knows they can submit another response
+		setTimeout(() => (state = 'default'), 3000);
 	}
 </script>
 
@@ -111,14 +172,18 @@
 	class="flex flex-col p-1 bg-gray-900 rounded place-items-center max-w-max"
 >
 	<h3 class="text-lg font-medium text-center">Pick all of the {pluralAnimalToPick}</h3>
-	<small class="mb-1 opacity-70">(this is to prevent bots)</small>
+	<small
+		class="mb-1 opacity-70"
+		class:text-red-500={state === 'error'}
+		class:text-indigo-400={state === 'success'}>{feedbackMessage}</small
+	>
 	<div class="flex flex-wrap justify-center">
-		{#await challengeFetch}
-			{#each new Array(numOptions) as _}
+		{#await challenge}
+			{#each new Array(numOptions) as _, index (index)}
 				<div class="bg-gray-800 card animate-pulse" />
 			{/each}
 		{:then challengeSet}
-			{#each challengeSet as animal, index ((index, animal.src))}
+			{#each challengeSet as animal, index (`${animal.src}-${index}`)}
 				<label style="background-image: url({animal.src});" class="text-transparent bg-cover card">
 					<input
 						type="checkbox"
@@ -132,15 +197,13 @@
 			{/each}
 		{/await}
 	</div>
-	<button
-		type="submit"
-		class="px-6 py-1.5 my-1 text-sm font-medium rounded-sm text-black bg-white hover:bg-gray-700 hover:text-white transition-colors"
-		>Done</button
-	>
+	<div class="my-1">
+		<Button {state} potentialStates={buttonStates} type="submit" size="sm" />
+	</div>
 </form>
 
 <style lang="postcss">
 	.card {
-		@apply w-32 h-32 m-1 rounded-sm select-none lg:w-40 lg:h-40;
+		@apply w-28 h-28 m-1 rounded-sm select-none lg:w-40 lg:h-40;
 	}
 </style>
