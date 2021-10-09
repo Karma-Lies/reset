@@ -71,12 +71,10 @@
 		</div>
 	</section>
 	<section class="p-2 space-y-4 md:space-y-2 grout">
-		<div
-			class="flex flex-col flex-wrap items-center space-y-2 md:space-y-0 md:flex-row md:space-x-2"
-		>
+		<div class="flex flex-col flex-wrap items-center space-y-2 md:space-y-0 md:flex-row">
 			<h1
 				name="title"
-				class="text-6xl text-center font-heading md:mr-4 lg:text-left"
+				class="text-6xl text-center font-heading md:mr-6 lg:text-left"
 				style="margin-top: calc((1 - 1.25) * 0.5em);"
 			>
 				{event.title}

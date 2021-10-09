@@ -10,7 +10,7 @@
 
 <div class="relative flex flex-col min-h-screen mx-auto font-general max-w-screen-2xl">
 	<Header />
-	<main class="flex-1 relative">
+	<main class="relative flex-1">
 		<slot />
 	</main>
 	<Newsletter />
