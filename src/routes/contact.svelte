@@ -15,10 +15,18 @@
 	// Component imports
 	import SEO from '$lib/components/01. atoms/SEO.svelte';
 	import Breadcrumbs from '$lib/components/02. molecules/Breadcrumbs.svelte';
+	import Button from '$lib/components/01. atoms/Button.svelte';
+	import Captcha from '$lib/components/01. atoms/Captcha.svelte';
+	import Modal from '$lib/components/02. molecules/Modal.svelte';
+
+	// Library imports
 	import axios from 'axios';
 
 	// Props
 	export let path;
+
+	// Form input values
+	let name, email, details;
 
 	// CTA button state management
 	let buttonState = 'default';
@@ -28,8 +36,6 @@
 		default: '🧙‍♀️ Send it'
 	};
 	const setButtonState = (state) => (buttonState = state);
-	// Reactive button text based on current button state
-	$: buttonInnerText = buttonStates[buttonState];
 
 	// Schema for serverless function POST response
 	let sendMailResponse = {
@@ -41,10 +47,7 @@
 	 * POST request to email data via serverless function
 	 * @param event
 	 */
-	async function sendMail(event) {
-		// Destructure form fields
-		const { name, email, details } = event.target;
-
+	async function sendMail(name, email, details) {
 		try {
 			// Call serverless function to submit contact form via email
 			const response = await axios.post(`/.netlify/functions/send-mail`, {
@@ -73,6 +76,30 @@
 			// Reset the button after 3 seconds so the user can try again
 			setTimeout(() => setButtonState('default'), 3000);
 		}
+	}
+
+	function submitForm(event) {
+		// Destructure form fields
+		({ name, email, details } = event.target);
+		verifyUser();
+	}
+
+	// Bot repellent
+	let showCaptcha,
+		userVerified = false;
+	const startChallenge = () => (showCaptcha = true);
+	const endChallenge = (value) => {
+		console.log(value);
+		userVerified = value.detail;
+
+		if (userVerified) {
+			showCaptcha = false;
+			sendMail(name, email, details);
+		}
+	};
+
+	function verifyUser() {
+		userVerified ? sendMail(name, email, details) : startChallenge();
 	}
 </script>
 
@@ -106,7 +133,7 @@
 				<li class="text-white">Get in touch.</li>
 			</ul>
 		</h1>
-		<form class="flex flex-col py-4 space-y-2" on:submit|preventDefault={sendMail}>
+		<form class="flex flex-col py-4 space-y-2" on:submit|preventDefault={submitForm}>
 			<div>
 				<label for="name">Your name</label>
 				<input
@@ -148,15 +175,9 @@
 				/>
 			</div>
 			<div>
-				<button
-					type="submit"
-					class="float-right w-full px-6 py-2 -mt-1.5 font-semibold text-black transition-all bg-gray-100 rounded-sm max-w-max hover:bg-gray-700 text-lg hover:text-white drop-shadow-sm disabled:hover:bg-indigo-500 disabled:hover:text-black disabled:cursor-not-allowed"
-					class:bg-indigo-500={buttonState === 'success'}
-					class:bg-red-100={buttonState === 'error'}
-					disabled={buttonState === 'success'}
-				>
-					{buttonInnerText}
-				</button>
+				<div class="-mt-1.5">
+					<Button state={buttonState} potentialStates={buttonStates} type="submit" size="lg" />
+				</div>
 				{#if sendMailResponse.message && sendMailResponse.status === 200}
 					<span class="font-mono text-indigo-500">
 						{sendMailResponse.message}
@@ -170,6 +191,11 @@
 		</form>
 	</section>
 </section>
+{#if showCaptcha}
+	<Modal on:close={() => (showCaptcha = false)}>
+		<Captcha on:verified={endChallenge} />
+	</Modal>
+{/if}
 
 <style lang="postcss">
 	#visual::after {
