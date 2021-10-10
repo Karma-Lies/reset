@@ -15,8 +15,9 @@
 <button
 	{type}
 	on:click
-	class="float-right w-full px-6 py-2 text-black transition-all bg-gray-100 rounded-sm max-w-max hover:bg-gray-700 hover:text-white drop-shadow-sm disabled:hover:bg-indigo-500 disabled:hover:text-black disabled:cursor-not-allowed"
+	class="float-right w-full text-black transition-all bg-gray-100 rounded-sm max-w-max hover:bg-gray-700 hover:text-white drop-shadow-sm disabled:hover:bg-indigo-500 disabled:hover:text-black disabled:cursor-not-allowed"
 	class:large={size === 'lg'}
+	class:medium={size === 'md'}
 	class:small={size === 'sm'}
 	class:bg-indigo-500={state === 'success'}
 	class:bg-red-100={state === 'error'}
@@ -28,8 +29,15 @@
 <style lang="postcss">
 	.large {
 		@apply font-semibold text-lg;
+		@apply px-6 py-2;
+	}
+
+	.medium {
+		@apply font-semibold text-base;
+		@apply px-3;
 	}
 	.small {
 		@apply font-medium text-sm;
+		@apply px-6 py-2;
 	}
 </style>
