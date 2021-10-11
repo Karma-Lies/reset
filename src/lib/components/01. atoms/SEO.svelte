@@ -4,6 +4,7 @@
 	export let title = 'music for the rest of us';
 	export let description =
 		'A new music event project in Chicago debuting rising musical artists across genres, from hyper-pop to bass music and beyond, sourcing underground talent.';
+	export let pageType = 'website';
 	/**
 	 * Append the site name to the start of the title
 	 */
@@ -38,10 +39,17 @@
 <svelte:head>
 	<title>{pageTitle}</title>
 	<meta name="description" content={description} />
+	<meta
+		name="keywords"
+		content="Reset, Presents, Chicago Shows, Production Company, Events, Bass Music, Hyperpop, indie pop, Rap, RnB, Indie Artists, Venue Space"
+	/>
+	<meta http-equiv="Content-language" content="en_US" />
 
-	<meta property="og:type" content="website" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content={pageType} />
 	<meta property="og:title" content={pageTitle} />
 	<meta property="og:description" content={description} />
+	<meta property="og:site_name" content="Reset Presents" />
 	<meta property="og:url" content="https://resetpresents.com/{url}" />
 
 	<link rel="me" href="https://twitter.com/reset_presents" />
