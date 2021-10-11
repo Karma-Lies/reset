@@ -13,16 +13,14 @@
 </script>
 
 <svg
+	role="presentation"
+	focusable="false"
 	data-name="Reset Logo"
 	xmlns="http://www.w3.org/2000/svg"
 	viewBox="0 0 3079.55 733.2"
 	fill="currentColor"
-	aria-labelledby="resetTitle resetDesc"
-	role="img"
 	class="w-full"
 >
-	<title id="resetTitle">Reset Presents</title>
-	<desc id="resetDesc">Our funky, blocky logo with connected lettering</desc>
 	<g>
 		<polygon points="1212.18 138.59 702.96 138.59 702.6 0.44 1211.83 0.44 1212.18 138.59" /><polygon
 			points="1212.18 428.5 702.96 428.5 702.6 290.35 1211.83 290.35 1212.18 428.5"
