@@ -15,7 +15,7 @@
 	/>
 	<div
 		class="absolute m-auto inset-4 max-w-md max-h-[32rem] overflow-scroll bg-gray-800 border-2 border-gray-400 border-opacity-20 rounded z-50 drop-shadow-2xl"
-		style="height: fit-content;"
+		style="height: max-content;"
 	>
 		<slot
 			><div class="w-full h-full flex">

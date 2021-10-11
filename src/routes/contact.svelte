@@ -45,7 +45,9 @@
 
 	/**
 	 * POST request to email data via serverless function
-	 * @param event
+	 * @param {string} name
+	 * @param {string} email
+	 * @param {string} details
 	 */
 	async function sendMail(name, email, details) {
 		try {

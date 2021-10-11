@@ -197,7 +197,7 @@
 			{/each}
 		{/await}
 	</div>
-	<div class="my-1">
+	<div class="my-1 w-full flex justify-center">
 		<Button {state} potentialStates={buttonStates} type="submit" size="sm" />
 	</div>
 </form>
