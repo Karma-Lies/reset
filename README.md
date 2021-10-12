@@ -3,7 +3,7 @@
 # ✨ RESET ⚡️
 
 The online experience for the premiere Chicago event organization for underground talent, Reset Presents.
-This project focuses on rethinking how a minimal production company website can appear and behave.
+This project experiments with how a minimal production company website can accessibly appear and behave.
 It's built with [SvelteKit](https://github.com/sveltejs/kit) on the JAMstack and made to scale.
 
 ## ⚙️ Developing
