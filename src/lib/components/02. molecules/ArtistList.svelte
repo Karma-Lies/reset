@@ -12,7 +12,7 @@
 	];
 </script>
 
-<ul name="artists" class="space-y-2 w-prose">
+<ul aria-label="lineup" class="space-y-2 w-prose">
 	{#each artists as artist (artist.name)}
 		<li class="flex space-x-4">
 			<a

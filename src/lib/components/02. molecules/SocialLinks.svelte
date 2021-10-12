@@ -36,14 +36,14 @@
 <ul class="flex flex-row space-x-3 place-items-center" class:space-x-1={size === 'tiny'}>
 	{#each links as link}
 		<li class={size === 'tiny' ? 'w-4 h-4' : 'w-5 h-5'}>
-			<a href={link.href}><svelte:component this={iconMap[link.type]} /></a>
+			<a href={link.href} aria-label={link.type}><svelte:component this={iconMap[link.type]} /></a>
 		</li>
 	{/each}
 </ul>
 
 <style lang="postcss">
 	li {
-		@apply opacity-30 transition-opacity;
+		@apply opacity-50 transition-opacity;
 	}
 	li:hover {
 		@apply opacity-100;
