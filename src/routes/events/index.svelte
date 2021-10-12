@@ -46,7 +46,7 @@
 	<Breadcrumbs {path} />
 </div>
 
-<section id="upcoming-events">
+<section id="main-content">
 	<div
 		id="dope-gradient"
 		class="before:right-0 before:left-0 before:top-0 before:h-full relative before:absolute before:from-crisp-dark before:via-transparent before:bg-gradient-to-b z-0"
@@ -82,7 +82,7 @@
 					</h3>
 					<span
 						class="opacity-0 group-hover:opacity-100 text-sm absolute tracking-widest right-4 bottom-4 md:bottom-8 px-1 rounded-sm shadow-lg bg-indigo-700"
-						>explore {metadata.eventCount} {metadata.eventCount.length > 1 ? 'shows' : 'show'}</span
+						>explore {metadata.eventCount} {metadata.eventCount > 1 ? 'shows' : 'show'}</span
 					></a
 				>
 			</li>
@@ -125,7 +125,7 @@
 		@apply text-7xl md:text-9xl font-heading  rounded-sm;
 	}
 	li {
-		@apply relative mx-auto max-w-max;
+		@apply relative mx-auto;
 		@apply hover:text-yellow-400 transition-colors bg-transparent rounded-sm px-2;
 		@apply even:text-indigo-600 hover:even:text-yellow-400;
 	}

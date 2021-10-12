@@ -49,6 +49,8 @@
 	<Breadcrumbs {path} />
 </div>
 
+<div id="main-content" />
+
 {#if upcomingEvents.length > 0}
 	<section id="upcoming-events" class="max-w-screen-lg mx-auto p-4">
 		<GridCard {events}>Upcoming Events</GridCard>

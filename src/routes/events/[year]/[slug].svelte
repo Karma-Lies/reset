@@ -57,12 +57,16 @@
 	description={event.description.text}
 	url="events/{year}/{slug}"
 	image={{ src: event.flyer.url, alt: `${event.title} flyer` }}
+	pageType="article"
 />
 
-<div class="mt-4">
-	<Breadcrumbs {path} />
+<div class="my-2">
+	<Breadcrumbs {path} accentColor="purple" />
 </div>
-<article class="grid content-start justify-center p-4 mb-4 text-lg lg:grid-cols-2 lg:gap-4">
+<article
+	id="main-content"
+	class="grid content-start justify-center p-4 mb-4 text-lg lg:grid-cols-2 lg:gap-4"
+>
 	<section class="p-2 lg:w-5/6 xl:w-3/4 justify-self-end">
 		<div id="flyer">
 			<a href={event.ticketPurchaseUrl}>
@@ -80,8 +84,11 @@
 				{event.title}
 			</h1>
 			<a target="_blank" name="tickets" class="ticket-purchase" href={event.ticketPurchaseUrl}
-				><span class="align-middle ">{ticketButtonCTA}</span>
+				><span class="align-middle">{ticketButtonCTA}</span>
 				<svg
+					role="presentation"
+					aria-hidden="true"
+					focusable="false"
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 24 24"
 					fill="none"
@@ -102,14 +109,14 @@
 		<ul>
 			<li>
 				<h3>Start Time</h3>
-				<p id="start-time">{startTimeString}</p>
+				<time id="start-time">{startTimeString}</time>
 			</li>
 			<li>
 				<h3>Address</h3>
-				<p id="address">{event.address}</p>
+				<address id="address">{event.address}</address>
 			</li>
 			{#if event.artists}
-				<li>
+				<li aria-label="Check out the performers at this show">
 					<h3>Artists</h3>
 					<ArtistList artists={event.artists} />
 				</li>
@@ -136,7 +143,7 @@
 
 <style lang="postcss">
 	h3 {
-		@apply text-gray-700 max-w-max tracking-wide font-semibold text-sm;
+		@apply text-gray-400 opacity-75 max-w-max tracking-wide font-semibold text-sm border-b-2 border-opacity-20 border-gray-800 -ml-3 pl-1 bg-crisp-dark;
 	}
 	.ticket-purchase {
 		@apply max-w-max px-3 py-2 font-semibold transition-all rounded-sm bg-gray-100 hover:bg-gray-700 hover:text-white w-full text-black drop-shadow-sm;

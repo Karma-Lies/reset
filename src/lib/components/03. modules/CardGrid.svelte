@@ -1,6 +1,6 @@
 <script>
 	// Component imports
-	import ArrowLink from '../01. atoms/ArrowLink.svelte';
+	import ArrowContainer from '../01. atoms/ArrowContainer.svelte';
 	import EventCard from '../02. molecules/EventCard.svelte';
 
 	// Props
@@ -14,7 +14,7 @@
 		class="mx-10 md:mx-16 text-3xl uppercase font-medium text-gray-900 dark:text-gray-200 max-w-max"
 	>
 		{#if href}
-			<ArrowLink {href}><slot /></ArrowLink>
+			<ArrowContainer {href}><slot /></ArrowContainer>
 		{:else}
 			<slot />
 		{/if}
@@ -26,7 +26,7 @@
 		style="writing-mode: vertical-lr;"
 	>
 		{#if href}
-			<ArrowLink vertical {href}><slot /></ArrowLink>
+			<ArrowContainer vertical {href}><slot /></ArrowContainer>
 		{:else}
 			<slot />
 		{/if}
@@ -44,7 +44,7 @@
 		style="writing-mode: vertical-lr;"
 	>
 		{#if href}
-			<ArrowLink vertical {href}><slot /></ArrowLink>
+			<ArrowContainer vertical {href}><slot /></ArrowContainer>
 		{:else}
 			<slot />
 		{/if}

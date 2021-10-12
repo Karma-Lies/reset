@@ -5,15 +5,19 @@
 </script>
 
 <footer class="relative w-full p-8 space-y-6 lg:space-y-4">
-	<nav>
+	<nav aria-label="site index">
 		<ul class="flex space-y-6 lg:space-y-0 lg:justify-between flex-col lg:flex-row">
 			<li class="mx-auto lg:mx-0 lg:w-72">
-				<h1 class="w-24 inline-block">
-					<a sveltekit:prefetch href="/">
-						<Logo />
-					</a>
-				</h1>
-				<small class="opacity-40">music for the rest of us</small>
+				<a
+					aria-label="Reset Presents Logo. Click to visit the home page."
+					aria-describedby="moto"
+					sveltekit:prefetch
+					href="/"
+					class="inline-block w-24"
+				>
+					<Logo />
+				</a>
+				<small id="moto" class="opacity-50">music for the rest of us</small>
 			</li>
 			<li class="w-max-w flex-1">
 				<ul class="flex justify-center space-x-6">
@@ -33,13 +37,14 @@
 			</li>
 		</ul>
 	</nav>
-	<div class="w-full text-center lg:text-right text-gray-500">
-		made with <span
+	<div class="w-full text-center lg:text-right text-gray-400">
+		<span class="opacity-75">made with</span>
+		<span
 			class="relative inline-block transform rotate-0 hover:rotate-[30deg] cursor-default transition-transform"
 		>
 			🍵
 		</span>
-		by
+		<span class="opacity-75">by</span>
 		<a
 			href="https://karmalies.studio"
 			class="text-indigo-400 hover:text-indigo-200 standard-link transition-colors font-semibold"
@@ -50,7 +55,7 @@
 
 <style lang="postcss">
 	.dim {
-		@apply opacity-40 transition-opacity;
+		@apply opacity-50 transition-opacity;
 	}
 	.dim:hover {
 		@apply opacity-100;

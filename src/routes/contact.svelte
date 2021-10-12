@@ -112,14 +112,14 @@
 </div>
 
 <section
-	id="contact"
+	id="main-content"
 	class="grid grid-flow-row p-8 pt-4 space-y-4 lg:space-y-0 lg:space-x-4 lg:grid-cols-2"
 >
 	<section class="relative flex" id="visual">
 		<div>
 			<img
 				src="/photos/Deej-n-Jake.jpg"
-				alt="Deej n Jake at one of our afterparties"
+				alt="Deej n Jake at one of our after parties"
 				class="object-cover rounded-sm lg:h-full"
 				width="1368"
 				height="912"
@@ -130,12 +130,17 @@
 		<h1 class="text-4xl md:text-6xl place-self-end font-heading">
 			<ul class="uppercase">
 				<li class="text-indigo-500">Show ideas.</li>
-				<li class="text-indigo-600">Venue space.</li>
-				<li class="text-indigo-700">Cool projects.</li>
+				<li class="text-indigo-400">Venue space.</li>
+				<li class="text-indigo-300">Projects.</li>
 				<li class="text-white">Get in touch.</li>
 			</ul>
 		</h1>
-		<form class="flex flex-col py-4 space-y-2" on:submit|preventDefault={submitForm}>
+		<form
+			class="flex flex-col py-4 space-y-2"
+			on:submit|preventDefault={submitForm}
+			aria-label="Contact"
+			aria-haspopup="dialog"
+		>
 			<div>
 				<label for="name">Your name</label>
 				<input
@@ -194,7 +199,7 @@
 	</section>
 </section>
 {#if showCaptcha}
-	<Modal on:close={() => (showCaptcha = false)}>
+	<Modal on:close={() => (showCaptcha = false)} ariaLabel="Captcha challenge">
 		<Captcha on:verified={endChallenge} />
 	</Modal>
 {/if}
@@ -210,6 +215,7 @@
 			transparent 24px
 		);
 		@apply absolute -top-4 lg:top-auto -right-4 lg:right-auto lg:-bottom-4 lg:-left-4 w-28 h-28 md:w-48 md:h-48;
+		@apply mix-blend-difference;
 	}
 
 	li {

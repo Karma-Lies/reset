@@ -33,6 +33,8 @@
 
 <SEO prefixSiteName />
 
+<div id="main-content" />
+
 <section id="upcoming-events" class="max-w-screen-lg mx-auto pt-4 pb-8">
 	<CardGrid href="/events?upcoming" {events}>Upcoming Events</CardGrid>
 </section>

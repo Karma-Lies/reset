@@ -36,9 +36,10 @@
 </script>
 
 <SEO title="About" url="about" />
-<section id="about" class="m-12 p-4">
+
+<section id="main-content" class="m-12 p-4">
 	<h1 class="text-4xl">{page.title}</h1>
-	<main class="max-w-prose">
+	<div class="max-w-prose">
 		{@html page.body.html}
-	</main>
+	</div>
 </section>
