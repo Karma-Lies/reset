@@ -1,4 +1,5 @@
 <script>
+	import PopupLabel from './../01. atoms/PopupLabel.svelte';
 	// Component imports
 	import Button from '$lib/components/01. atoms/Button.svelte';
 	import Modal from '$lib/components/02. molecules/Modal.svelte';
@@ -94,17 +95,26 @@
 	</div>
 	<div class="m-auto space-y-4 p-6 lg:px-8 w-full md:w-4/6 lg:w-full xl:w-3/4 font-sans">
 		<form
-			class="flex flex-row justify-between m-auto bg-gray-800 p-1.5 group focus-within:border-white border-2 border-transparent rounded transition-colors focus-within:border-opacity-20 drop-shadow-sm"
+			class="relative group"
 			on:submit|preventDefault={submitForm}
+			aria-haspopup="dialog"
+			aria-label="Sign up for our newsletter"
 		>
-			<input
-				name="email"
-				type="email"
-				required
-				placeholder="Please enter your email address"
-				class="bg-transparent w-full px-3 placeholder-gray-500 py-2 focus:outline-none transition-colors text-lg text-gray-300 font-medium placeholder-shown:font-normal"
-			/>
-			<Button state={buttonState} potentialStates={buttonStates} type="submit" size="md" />
+			<PopupLabel target="newsletter-email">Email address</PopupLabel>
+			<div
+				class="flex flex-row justify-between m-auto bg-gray-800 p-1.5 group focus-within:border-white border-2 border-transparent rounded transition-colors focus-within:border-opacity-20 drop-shadow-sm"
+			>
+				<input
+					name="email"
+					id="newsletter-email"
+					type="email"
+					required
+					placeholder="Please enter your email address"
+					class="inline-block bg-transparent w-full px-3 placeholder-gray-500 py-2 focus:outline-none transition-colors text-lg text-gray-300 font-medium placeholder-shown:font-normal"
+				/>
+
+				<Button state={buttonState} potentialStates={buttonStates} type="submit" size="md" />
+			</div>
 		</form>
 		<div>
 			{#if sendMailResponse.message && sendMailResponse.status === 200}
