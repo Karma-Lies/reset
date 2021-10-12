@@ -42,7 +42,7 @@
 	url="events"
 />
 
-<div class="mt-4">
+<div class="my-2">
 	<Breadcrumbs {path} />
 </div>
 
