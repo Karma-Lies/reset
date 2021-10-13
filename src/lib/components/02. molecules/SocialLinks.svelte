@@ -43,9 +43,12 @@
 
 <style lang="postcss">
 	li {
-		@apply opacity-50 transition-opacity;
+		@apply opacity-50;
+		@apply motion-safe:transition-all translate-y-0 scale-100 origin-bottom;
 	}
-	li:hover {
-		@apply opacity-100;
+	li:hover,
+	li:focus-within {
+		@apply opacity-100 text-purple-400;
+		@apply motion-safe:translate-x-0.5 motion-safe:scale-105;
 	}
 </style>
