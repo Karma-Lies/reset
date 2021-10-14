@@ -3,7 +3,7 @@
 	 * @type {import('@sveltejs/kit').Load}
 	 */
 	export async function load({ page, fetch }) {
-		const url = `/api/events/${page.params.year}.json`;
+		const url = `/api/events/${page.params.year}.json?order=DESC`;
 		const res = await fetch(url);
 
 		if (res.ok) {
@@ -28,15 +28,12 @@
 	import SEO from '$lib/components/01. atoms/SEO.svelte';
 	import Breadcrumbs from '$lib/components/02. molecules/Breadcrumbs.svelte';
 	import GridCard from '$lib/components/03. modules/CardGrid.svelte';
+	import UpcomingEvents from '$lib/components/03. modules/UpcomingEvents.svelte';
 
 	// Props
 	export let events;
 	export let year;
 	export let path;
-
-	// Logic
-	const currentDate = new Date();
-	const upcomingEvents = events.filter((event) => new Date(event.startTime) >= currentDate);
 </script>
 
 <SEO
@@ -51,11 +48,7 @@
 
 <div id="main-content" />
 
-{#if upcomingEvents.length > 0}
-	<section id="upcoming-events" class="max-w-screen-lg mx-auto p-4">
-		<GridCard {events}>Upcoming Events</GridCard>
-	</section>
-{/if}
-<section id="events" class="max-w-screen-lg mx-auto p-4">
+<UpcomingEvents {events} />
+<section id="events" class="max-w-screen-lg py-4 mx-auto mb-4">
 	<GridCard {events}>{year} Events</GridCard>
 </section>

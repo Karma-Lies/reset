@@ -5,9 +5,13 @@ export async function get(page) {
 		headers: {}
 	});
 
+	const order = page.query.get('order') ?? 'ASC';
+
+	const orderBy = { orderBy: `startTime_${order}` };
+
 	const query = gql`
-		query EventsIndex {
-			events {
+		query EventsIndex($orderBy: EventOrderByInput) {
+			events(orderBy: $orderBy) {
 				title
 				slug
 				id
@@ -21,7 +25,7 @@ export async function get(page) {
 		}
 	`;
 
-	let { events } = await graphcms.request(query);
+	let { events } = await graphcms.request(query, orderBy);
 
 	// Array of years for each event
 	const years = events.map((event, i) => {
