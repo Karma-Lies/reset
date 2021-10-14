@@ -86,14 +86,14 @@
 
 <section
 	id="newsletter-signup"
-	class="relative grid lg:grid-cols-2 py-16 xl:py-24 bg-gray-900 bg-opacity-20"
+	class="relative grid py-16 bg-gray-900 lg:grid-cols-2 xl:py-24 bg-opacity-20"
 >
-	<div class="m-auto p-6 transform-gpu">
-		<h2 class="text-5xl md:text-7xl font-heading text-gray-100">
+	<div class="p-6 m-auto transform-gpu">
+		<h2 class="text-5xl text-gray-100 md:text-7xl font-heading">
 			Be the first to know about our shows
 		</h2>
 	</div>
-	<div class="m-auto space-y-4 p-6 lg:px-8 w-full md:w-4/6 lg:w-full xl:w-3/4 font-sans">
+	<div class="w-full p-6 m-auto space-y-4 font-sans lg:px-8 md:w-4/6 lg:w-full xl:w-3/4">
 		<form
 			class="relative group"
 			on:submit|preventDefault={submitForm}
@@ -110,7 +110,7 @@
 					type="email"
 					required
 					placeholder="Please enter your email address"
-					class="inline-block bg-transparent w-full px-3 placeholder-gray-500 py-2 focus:outline-none transition-colors text-lg text-gray-300 font-medium placeholder-shown:font-normal"
+					class="inline-block w-full px-3 py-2 text-lg font-medium text-gray-300 placeholder-gray-500 transition-colors bg-transparent focus:outline-none placeholder-shown:font-normal"
 				/>
 
 				<Button state={buttonState} potentialStates={buttonStates} type="submit" size="md" />
@@ -138,6 +138,6 @@
 <style lang="postcss">
 	section::before {
 		content: '';
-		@apply h-2 w-full bg-gradient-to-r from-purple-400 via-red-500 to-yellow-400 drop-shadow-xl max-w-full 2xl:rounded-sm absolute;
+		@apply h-2 w-full bg-gradient-to-r from-purple-400 via-red-500 to-yellow-400 drop-shadow-xl max-w-full 2xl:rounded-sm absolute z-10;
 	}
 </style>
