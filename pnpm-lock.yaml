@@ -5,11 +5,11 @@ specifiers:
   '@sendgrid/mail': 7.4.7
   '@sveltejs/adapter-netlify': 1.0.0-next.31
   '@sveltejs/adapter-static': 1.0.0-next.20
-  '@sveltejs/kit': 1.0.0-next.180
+  '@sveltejs/kit': 1.0.0-next.184
   '@urpflanze/js': ^1.1.5
   '@vimeo/player': 2.16.1
   autoprefixer: 10.3.5
-  axios: 0.22.0
+  axios: 0.23.0
   cssnano: 5.0.8
   eslint: 7.32.0
   eslint-config-prettier: 8.3.0
@@ -36,7 +36,7 @@ devDependencies:
   '@sveltejs/kit': 1.0.0-next.180_svelte@3.43.2
   '@vimeo/player': 2.16.1
   autoprefixer: 10.3.5_postcss@8.3.7
-  axios: 0.22.0
+  axios: 0.23.0
   cssnano: 5.0.8_postcss@8.3.7
   eslint: 7.32.0
   eslint-config-prettier: 8.3.0_eslint@7.32.0
@@ -3425,8 +3425,8 @@ packages:
       - debug
     dev: true
 
-  /axios/0.22.0:
-    resolution: {integrity: sha512-Z0U3uhqQeg1oNcihswf4ZD57O3NrR1+ZXhxaROaWpDmsDTx7T2HNBV2ulBtie2hwJptu8UvgnJoK+BIqdzh/1w==}
+  /axios/0.23.0:
+    resolution: {integrity: sha512-NmvAE4i0YAv5cKq8zlDoPd1VLKAqX5oLuZKs8xkJa4qi6RGn0uhCYFjWtHHC9EM/MwOwYWOs53W+V0aqEXq1sg==}
     dependencies:
       follow-redirects: 1.14.4_debug@4.3.2
     transitivePeerDependencies:
