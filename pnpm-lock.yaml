@@ -6,7 +6,7 @@ specifiers:
   '@sveltejs/adapter-netlify': 1.0.0-next.31
   '@sveltejs/adapter-static': 1.0.0-next.20
   '@sveltejs/kit': 1.0.0-next.184
-  '@urpflanze/js': ^1.1.5
+  '@urpflanze/js': 1.1.5
   '@vimeo/player': 2.16.1
   autoprefixer: 10.3.5
   axios: 0.23.0
@@ -33,7 +33,7 @@ devDependencies:
   '@sendgrid/mail': 7.4.7
   '@sveltejs/adapter-netlify': 1.0.0-next.31
   '@sveltejs/adapter-static': 1.0.0-next.20
-  '@sveltejs/kit': 1.0.0-next.180_svelte@3.43.2
+  '@sveltejs/kit': 1.0.0-next.184_svelte@3.43.2
   '@vimeo/player': 2.16.1
   autoprefixer: 10.3.5_postcss@8.3.7
   axios: 0.23.0
@@ -2651,14 +2651,14 @@ packages:
     resolution: {integrity: sha512-vutVoloX35E6QnnrNofToOWn/er/Li2yoR15NbTPZ26Gp3M6A2ckQJNMJrDbBA5XZsktNIXchIVGaADnKIJrow==}
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.180_svelte@3.43.2:
-    resolution: {integrity: sha512-SbqZqgtw1KnyV1CXqOLQUQTxOksONvNUGeyalAQem8XHPiV7iNslPhXbTBxHyBhD3rvY4Nzd1kPp9/zCVeWsog==}
-    engines: {node: ^12.20 || >=14.13}
+  /@sveltejs/kit/1.0.0-next.184_svelte@3.43.2:
+    resolution: {integrity: sha512-bQNka3td/OMmnbDEzUTmb3czPgt/y93WOyYiT14ORq/qPewoMhEtgPikfboejdZMTJESSq06s43YXmF2MzqSSA==}
+    engines: {node: '>=14.13'}
     hasBin: true
     peerDependencies:
       svelte: ^3.43.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.0.0-next.26_svelte@3.43.2+vite@2.6.7
+      '@sveltejs/vite-plugin-svelte': 1.0.0-next.28_svelte@3.43.2+vite@2.6.7
       cheap-watch: 1.0.4
       sade: 1.7.4
       svelte: 3.43.2
@@ -2671,8 +2671,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/vite-plugin-svelte/1.0.0-next.26_svelte@3.43.2+vite@2.6.7:
-    resolution: {integrity: sha512-+Rx3IBa4disskQmr+0/Rh+NYavkM6Vi8BnkTGjKnblawysw4INXkq2WEQBp8luGpUZEkjwczdL9Z9Q2hISvIeA==}
+  /@sveltejs/vite-plugin-svelte/1.0.0-next.28_svelte@3.43.2+vite@2.6.7:
+    resolution: {integrity: sha512-NZlOSfogZHQFLp8Vp59tIc0grmmJeTyyxJt0o9uomeQC0hZJsA7jp8rRW7EMH7TRvo+tv1MtB9BU84lStv7xYw==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
     peerDependencies:
       diff-match-patch: ^1.0.5

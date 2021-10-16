@@ -39,6 +39,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@urpflanze/js": "^1.1.5"
+		"@urpflanze/js": "1.1.5"
 	}
 }
