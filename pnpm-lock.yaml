@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@poppanator/sveltekit-svg': 0.1.7
   '@sendgrid/mail': 7.4.7
-  '@sveltejs/adapter-static': 1.0.0-next.20
+  '@sveltejs/adapter-static': 1.0.0-next.21
   '@sveltejs/kit': 1.0.0-next.184
   '@vimeo/player': 2.16.1
   autoprefixer: 10.3.5
@@ -26,7 +26,7 @@ specifiers:
 devDependencies:
   '@poppanator/sveltekit-svg': 0.1.7_svelte@3.43.2
   '@sendgrid/mail': 7.4.7
-  '@sveltejs/adapter-static': 1.0.0-next.20
+  '@sveltejs/adapter-static': 1.0.0-next.21
   '@sveltejs/kit': 1.0.0-next.184_svelte@3.43.2
   '@vimeo/player': 2.16.1
   autoprefixer: 10.3.5_postcss@8.3.7
@@ -2597,8 +2597,8 @@ packages:
       lodash.deburr: 4.1.0
     dev: true
 
-  /@sveltejs/adapter-static/1.0.0-next.20:
-    resolution: {integrity: sha512-vutVoloX35E6QnnrNofToOWn/er/Li2yoR15NbTPZ26Gp3M6A2ckQJNMJrDbBA5XZsktNIXchIVGaADnKIJrow==}
+  /@sveltejs/adapter-static/1.0.0-next.21:
+    resolution: {integrity: sha512-B4+QoUVAaANKx+mHntG8SqF45zbj3Ct4Akg/cGauo6COyfKZRhO5OsMa+wPuT2TKJBZC4eEDK0p+p9nyQBkxKQ==}
     dev: true
 
   /@sveltejs/kit/1.0.0-next.184_svelte@3.43.2:
