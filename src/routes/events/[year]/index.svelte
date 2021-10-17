@@ -30,10 +30,14 @@
 	import GridCard from '$lib/components/03. modules/CardGrid.svelte';
 	import UpcomingEvents from '$lib/components/03. modules/UpcomingEvents.svelte';
 
+	// Library imports
+	import { getPastEvents } from '$lib/utils/events';
+
 	// Props
 	export let events;
 	export let year;
 	export let path;
+	const pastEvents = getPastEvents(events);
 </script>
 
 <SEO
@@ -50,5 +54,5 @@
 
 <UpcomingEvents {events} />
 <section id="events" class="max-w-screen-lg py-4 mx-auto mb-4">
-	<GridCard {events}>{year} Events</GridCard>
+	<GridCard events={pastEvents}>{year} Events</GridCard>
 </section>

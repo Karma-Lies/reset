@@ -1,6 +1,6 @@
 <script>
 	// Component imports
-	import GridCard from '$lib/components/03. modules/CardGrid.svelte';
+	import CardGrid from '$lib/components/03. modules/CardGrid.svelte';
 
 	// Library imports
 	import { getUpcomingEvents } from '$lib/utils/events.js';
@@ -14,12 +14,12 @@
 
 {#if upcomingEvents.length > 0}
 	<section id="upcoming-events" class="max-w-screen-lg mx-auto">
-		<GridCard events={upcomingEvents}>
+		<CardGrid events={upcomingEvents}>
 			{#if upcomingEvents.length > 1}
 				Upcoming Events
 			{:else}
 				Upcoming Event
 			{/if}
-		</GridCard>
+		</CardGrid>
 	</section>
 {/if}
