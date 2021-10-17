@@ -31,7 +31,7 @@
 			<slot />
 		{/if}
 	</h2>
-	<ul class="bg-gray-900 rounded-sm">
+	<ul class="rounded-sm">
 		{#each events as event}
 			<li>
 				<EventCard {event} />
@@ -54,8 +54,8 @@
 <style lang="postcss">
 	ul {
 		/* display: grid; */
-		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-		@apply md:grid flex flex-col gap-2;
+		grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+		@apply grid gap-2;
 	}
 	li {
 		@apply m-1;
