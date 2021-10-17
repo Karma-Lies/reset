@@ -91,7 +91,6 @@
 		userVerified = false;
 	const startChallenge = () => (showCaptcha = true);
 	const endChallenge = (value) => {
-		console.log(value);
 		userVerified = value.detail;
 
 		if (userVerified) {

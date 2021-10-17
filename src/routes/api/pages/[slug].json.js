@@ -5,7 +5,6 @@ export async function get({ params }) {
 	const graphcms = new GraphQLClient(import.meta.env.VITE_GRAPHCMS_URL, {
 		headers: {}
 	});
-	console.log(slug);
 	const query = gql`
 		query Page($slug: String!) {
 			page(where: { slug: $slug }) {
@@ -21,7 +20,6 @@ export async function get({ params }) {
 	};
 
 	const { page } = await graphcms.request(query, variables);
-	console.log(page);
 
 	return {
 		body: page

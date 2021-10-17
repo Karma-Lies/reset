@@ -20,7 +20,6 @@
 	// Props
 	export let events;
 	const pastEvents = getPastEvents(events);
-	console.log(pastEvents);
 </script>
 
 <SEO prefixSiteName />

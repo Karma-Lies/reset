@@ -31,7 +31,6 @@
 	 * @param {string} email
 	 */
 	async function signup(email) {
-		console.log('email entered', email.value);
 		try {
 			// Call serverless function to submit contact form via email
 			const response = await axios.post(`/.netlify/functions/newsletter-signup`, {

@@ -1,17 +1,3 @@
-<script>
-	// import { onMount } from 'svelte';
-
-	// import { draw, fade } from 'svelte/transition';
-	// let visible = false;
-
-	// onMount(async () => {
-	// 	setInterval(() => {
-	// 		visible = !visible;
-	// 		console.log(visible);
-	// 	}, 5000);
-	// });
-</script>
-
 <svg
 	role="presentation"
 	focusable="false"
