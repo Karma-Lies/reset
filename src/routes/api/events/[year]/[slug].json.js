@@ -54,8 +54,15 @@ export async function get({ params }) {
 
 	let { event } = await graphcms.request(query, variables);
 
+	// Regex with positive lookbehind to only match if ticket URL is eventbrite; if so, matches eventID
+	let eventID = event.ticketPurchaseUrl.match(/(?<=eventbrite.*)\d{12}/s);
+
+	// Would be nice to toss in a logical AND assignment here but SvelteKit/Vite don't seem to enjoy that
+	if (eventID) eventID = eventID[0];
+
 	event = {
 		...event,
+		eventbriteID: eventID,
 		artists: event.artists.map((artist) => {
 			if (artist.spotifyArtistId) {
 				const updatedLinks = [

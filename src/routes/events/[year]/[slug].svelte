@@ -27,6 +27,7 @@
 <script>
 	// Component imports
 	import SEO from '$lib/components/01. atoms/SEO.svelte';
+	import TicketPurchase from '$lib/components/02. molecules/TicketPurchase.svelte';
 	import Breadcrumbs from '$lib/components/02. molecules/Breadcrumbs.svelte';
 	import ArtistList from '$lib/components/02. molecules/ArtistList.svelte';
 	import VimeoVideo from '$lib/components/01. atoms/VimeoVideo.svelte';
@@ -89,27 +90,9 @@
 			>
 				{event.title}
 			</h1>
-			<a target="_blank" name="tickets" class="ticket-purchase" href={event.ticketPurchaseUrl}
-				><span class="align-middle">{ticketButtonCTA}</span>
-				<svg
-					role="presentation"
-					aria-hidden="true"
-					focusable="false"
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="3"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					class="inline w-4 py-1 align-middle opacity-30"
-					><path
-						d="M13.544 10.456a4.368 4.368 0 0 0-6.176 0l-3.089 3.088a4.367 4.367 0 1 0 6.177 6.177L12 18.177"
-					/><path
-						d="M10.456 13.544a4.368 4.368 0 0 0 6.176 0l3.089-3.088a4.367 4.367 0 1 0-6.177-6.177L12 5.823"
-					/></svg
-				></a
-			>
+			<TicketPurchase eventID={event.eventbriteID} url={event.ticketPurchaseUrl}>
+				{ticketButtonCTA}
+			</TicketPurchase>
 		</div>
 		<h2 class="sr-only">Details</h2>
 		<ul>
@@ -150,9 +133,6 @@
 <style lang="postcss">
 	h3 {
 		@apply text-gray-400 opacity-75 max-w-max tracking-wide font-semibold text-sm border-b-2 border-opacity-20 border-gray-800 -ml-3 pl-1 bg-crisp-dark;
-	}
-	.ticket-purchase {
-		@apply max-w-max px-3 py-2 font-semibold transition-all rounded-sm bg-gray-100 hover:bg-gray-700 hover:text-white w-full text-black drop-shadow-sm;
 	}
 	.grout > ul {
 		@apply divide-y-2 divide-gray-800 divide-opacity-20 border-2 border-gray-800 border-opacity-20 text-gray-300;
