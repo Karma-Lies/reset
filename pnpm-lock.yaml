@@ -12,7 +12,7 @@ specifiers:
   eslint: 7.32.0
   eslint-config-prettier: 8.3.0
   eslint-plugin-svelte3: 3.2.1
-  graphql: 15.6.0
+  graphql: 15.6.1
   graphql-request: 3.6.0
   netlify-cli: 6.9.30
   postcss: 8.3.7
@@ -35,8 +35,8 @@ devDependencies:
   eslint: 7.32.0
   eslint-config-prettier: 8.3.0_eslint@7.32.0
   eslint-plugin-svelte3: 3.2.1_eslint@7.32.0+svelte@3.43.2
-  graphql: 15.6.0
-  graphql-request: 3.6.0_graphql@15.6.0
+  graphql: 15.6.1
+  graphql-request: 3.6.0_graphql@15.6.1
   netlify-cli: 6.9.30
   postcss: 8.3.7
   postcss-load-config: 3.1.0
@@ -5996,7 +5996,7 @@ packages:
     resolution: {integrity: sha512-qkIilPUYcNhJpd33n0GBXTB1MMPp14TxEsEs0pTrsSVucApsYzW5V+Q8Qxhik6KU3evy+qkAAowTByymK0avdg==}
     dev: true
 
-  /graphql-request/3.6.0_graphql@15.6.0:
+  /graphql-request/3.6.0_graphql@15.6.1:
     resolution: {integrity: sha512-p5qIuD+gyjuOJ8z9sEcfcLVK7HUB+/88hf/xGEzX330U3L2OR1JtaupLPmd1D2V7YtqWiEnSA3tX9vqZ4eGMhA==}
     peerDependencies:
       graphql: 14.x || 15.x
@@ -6004,11 +6004,11 @@ packages:
       cross-fetch: 3.1.4
       extract-files: 9.0.0
       form-data: 3.0.1
-      graphql: 15.6.0
+      graphql: 15.6.1
     dev: true
 
-  /graphql/15.6.0:
-    resolution: {integrity: sha512-WJR872Zlc9hckiEPhXgyUftXH48jp2EjO5tgBBOyNMRJZ9fviL2mJBD6CAysk6N5S0r9BTs09Qk39nnJBkvOXQ==}
+  /graphql/15.6.1:
+    resolution: {integrity: sha512-3i5lu0z6dRvJ48QP9kFxBkJ7h4Kso7PS8eahyTFz5Jm6CvQfLtNIE8LX9N6JLnXTuwR+sIYnXzaWp6anOg0QQw==}
     engines: {node: '>= 10.x'}
     dev: true
 
