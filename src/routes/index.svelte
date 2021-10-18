@@ -16,6 +16,7 @@
 
 	// Library imports
 	import { getPastEvents } from '$lib/utils/events.js';
+	import Breadcrumbs from '$lib/components/02. molecules/Breadcrumbs.svelte';
 
 	// Props
 	export let events;
@@ -24,9 +25,13 @@
 
 <SEO prefixSiteName />
 
+<div class="my-2">
+	<Breadcrumbs path={'/music for the rest of us'} />
+</div>
+
 <div id="main-content" />
 
 <UpcomingEvents {events} />
 <section id="past-events" class="max-w-screen-lg pt-4 pb-8 mx-auto">
-	<CardGrid href="/events" events={pastEvents}>Past Events</CardGrid>
+	<CardGrid href="/events" events={pastEvents} strictlyLazy>Past Events</CardGrid>
 </section>
