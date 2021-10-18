@@ -7,6 +7,7 @@
 	export let href;
 	export let events;
 	export let compactHeading = false;
+	export let strictlyLazy = false;
 </script>
 
 {#if compactHeading}
@@ -32,9 +33,9 @@
 		{/if}
 	</h2>
 	<ul class="rounded-sm">
-		{#each events as event}
+		{#each events as event, index (event.id)}
 			<li>
-				<EventCard {event} />
+				<EventCard {event} {index} {strictlyLazy} />
 			</li>
 		{/each}
 	</ul>

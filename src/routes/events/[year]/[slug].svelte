@@ -70,7 +70,13 @@
 	<section class="p-2 lg:w-5/6 xl:w-3/4 justify-self-end">
 		<div id="flyer">
 			<a href={event.ticketPurchaseUrl}>
-				<img src={event.flyer.url} alt="{event.title} flyer" class="rounded-sm" />
+				<img
+					width="1000"
+					height="1250"
+					src={event.flyer.url}
+					alt="{event.title} flyer"
+					class="rounded-sm"
+				/>
 			</a>
 		</div>
 	</section>

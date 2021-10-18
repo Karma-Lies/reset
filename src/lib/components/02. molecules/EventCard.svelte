@@ -1,6 +1,8 @@
 <script>
 	// Props
 	export let event;
+	export let index;
+	export let strictlyLazy = false;
 
 	const startTimeString = new Date(event.startTime).toLocaleString('en-US', {
 		weekday: 'short',
@@ -14,7 +16,14 @@
 
 <div class="card">
 	<a class="group" sveltekit:prefetch href="/events/{event.year}/{event.slug}">
-		<img width={1500} height={1875} src={event.flyer.url} alt="{event.title} flyer" />
+		<img
+			width="1000"
+			height="1250"
+			src={event.flyer.url}
+			alt="{event.title} flyer"
+			class="bg-black"
+			loading={index !== 0 || strictlyLazy ? 'lazy' : 'eager'}
+		/>
 
 		<div
 			class="absolute inset-0 w-full h-full bg-crisp-dark bg-opacity-90 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300 overflow-hidden text-center shadow-inner"
