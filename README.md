@@ -2,8 +2,8 @@
 
 # ✨ RESET ⚡️
 
-The online experience for the premiere, inclusive Chicago event organization for underground talent, Reset Presents.
-This project experiments with how a minimal production company website can accessibly appear and behave.
+The online anchor of Chicago's premiere inclusive event organization for underground talent, Reset Presents.
+This project experiments with how a minimal production company website can accessibly appear and behave, focusing on making it easy to access information about our events.
 It's built with [SvelteKit](https://github.com/sveltejs/kit) on the [JAMstack](https://jamstack.org/).
 
 ## ⚙️ Developing
