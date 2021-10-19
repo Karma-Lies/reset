@@ -1,28 +1,15 @@
 <script>
-	import { onMount, onDestroy, createEventDispatcher } from 'svelte';
+	import { browser } from '$app/env';
+	import { createEventDispatcher } from 'svelte';
 
 	// Props
 	export let eventID;
 	export let url;
 
 	// Data
-	let eventbrite;
 	const dispatch = createEventDispatcher();
 	const scriptSrc = 'https://www.eventbrite.com/static/widgets/eb_widgets.js';
-
-	onMount(async () => {
-		if (eventbrite) {
-			eventbrite.addEventListener('load', handleLoad);
-			eventbrite.addEventListener('error', handleError);
-		}
-	});
-
-	onDestroy(() => {
-		if (eventbrite) {
-			eventbrite.removeEventListener('load', handleLoad);
-			eventbrite.removeEventListener('error', handleError);
-		}
-	});
+	let noErrors = true;
 
 	function handleLoad() {
 		init();
@@ -30,6 +17,7 @@
 
 	function handleError(event) {
 		console.error('something went wrong', event);
+		noErrors = false;
 	}
 
 	// Initialize eventbrite widget
@@ -38,7 +26,7 @@
 			widgetType: 'checkout',
 			eventId: eventID,
 			modal: true,
-			modalTriggerElementId: `eventbrite-widget-modal-trigger-${eventID}`,
+			modalTriggerElementId: `eventbrite-trigger-${eventID}`,
 			onOrderComplete: onPurchase
 		});
 	}
@@ -50,17 +38,22 @@
 </script>
 
 <svelte:head>
-	{#if eventID}
-		<script bind:this={eventbrite} src={scriptSrc} async></script>
+	{#if eventID && browser}
+		<script
+			id="eventbrite-checkout"
+			src={scriptSrc}
+			on:load={handleLoad}
+			on:error={handleError}
+			async></script>
 	{/if}
 </svelte:head>
 
-{#if eventID}
+{#if eventID && noErrors}
 	<button
 		aria-haspopup="dialog"
 		name="tickets"
 		class="ticket-purchase"
-		id="eventbrite-widget-modal-trigger-{eventID}"
+		id="eventbrite-trigger-{eventID}"
 	>
 		<span class="align-middle"><slot /></span>
 		<svg
