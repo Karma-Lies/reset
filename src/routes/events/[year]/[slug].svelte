@@ -94,9 +94,11 @@
 			>
 				{event.title}
 			</h1>
-			<TicketPurchase eventID={event.eventbriteID} url={event.ticketPurchaseUrl}>
-				{ticketButtonCTA}
-			</TicketPurchase>
+			{#if event.ticketPurchaseUrl}
+				<TicketPurchase eventID={event.eventbriteID} url={event.ticketPurchaseUrl}>
+					{ticketButtonCTA}
+				</TicketPurchase>
+			{/if}
 		</div>
 		<h2 class="sr-only">Details</h2>
 		<ul>
