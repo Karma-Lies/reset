@@ -104,6 +104,6 @@
 
 <style lang="postcss">
 	.ticket-purchase {
-		@apply max-w-max px-3 py-2 font-semibold transition-all rounded-sm bg-gray-100 hover:bg-gray-700 hover:text-white w-full text-black drop-shadow-sm;
+		@apply max-w-max px-3 py-2 font-semibold motion-safe:transition-all rounded-sm bg-gray-100 hover:bg-gray-700 hover:text-white w-full text-black drop-shadow-sm;
 	}
 </style>
