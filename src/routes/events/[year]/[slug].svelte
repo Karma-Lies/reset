@@ -54,7 +54,11 @@
 </script>
 
 <SEO
-	title="{event.title} {year}"
+	title="{event.title} Tickets | {eventStartTime.toLocaleString('en-US', {
+		year: 'numeric',
+		month: 'short',
+		day: 'numeric'
+	})} Chicago, IL"
 	description={event.description.text}
 	url="events/{year}/{slug}"
 	image={{ src: event.flyer.url, alt: `${event.title} flyer` }}
