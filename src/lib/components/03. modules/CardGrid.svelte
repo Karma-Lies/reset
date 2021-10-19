@@ -12,7 +12,7 @@
 
 {#if compactHeading}
 	<h2
-		class="mx-10 md:mx-16 text-3xl uppercase font-medium text-gray-900 dark:text-gray-200 max-w-max"
+		class="mx-10 text-3xl font-medium text-gray-900 uppercase md:mx-16 dark:text-gray-200 max-w-max"
 	>
 		{#if href}
 			<ArrowContainer {href}><slot /></ArrowContainer>
@@ -21,7 +21,7 @@
 		{/if}
 	</h2>
 {/if}
-<div class="mx-1 md:mx-6 flex flex-row justify-center">
+<div class="flex flex-row justify-center mx-1 md:mx-6">
 	<h2
 		class="text-3xl uppercase font-medium py-0.5 text-gray-900 dark:text-gray-200 max-w-max"
 		style="writing-mode: vertical-lr;"
@@ -53,9 +53,18 @@
 </div>
 
 <style lang="postcss">
+	:root {
+		--gridElementSize: 1fr;
+	}
+
+	@media screen(md) {
+		:root {
+			--gridElementSize: 310px;
+		}
+	}
 	ul {
 		/* display: grid; */
-		grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(var(--gridElementSize), 1fr));
 		@apply grid gap-2;
 	}
 	li {

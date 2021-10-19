@@ -62,7 +62,7 @@
 <style lang="postcss">
 	.card {
 		@apply w-full h-full relative z-10;
-		@apply border-white border-2 translate-y-0 transition-transform;
+		@apply border-white border-2 translate-y-0 motion-safe:transition-transform;
 		@apply hover:-translate-y-2 hover:rotate-1;
 	}
 
