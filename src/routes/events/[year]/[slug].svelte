@@ -92,8 +92,7 @@
 				class="text-6xl text-center break-words font-heading md:mr-6 lg:text-left"
 				style="margin-top: calc((1 - 1.25) * 0.5em);"
 			>
-				<!-- Allows for &shy; and other unicode chars to correctly display -->
-				{@html event.title}
+				{event.title}
 			</h1>
 			{#if event.ticketPurchaseUrl}
 				<TicketPurchase eventID={event.eventbriteID} url={event.ticketPurchaseUrl}>
