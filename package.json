@@ -17,7 +17,7 @@
 		"@poppanator/sveltekit-svg": "0.1.7",
 		"@sendgrid/mail": "7.4.7",
 		"@sveltejs/adapter-static": "1.0.0-next.21",
-		"@sveltejs/kit": "1.0.0-next.184",
+		"@sveltejs/kit": "1.0.0-next.186",
 		"@vimeo/player": "2.16.1",
 		"autoprefixer": "10.3.7",
 		"axios": "0.23.0",
