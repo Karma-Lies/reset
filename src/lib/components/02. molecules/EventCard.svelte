@@ -26,17 +26,17 @@
 		/>
 
 		<div
-			class="absolute inset-0 w-full h-full bg-crisp-dark bg-opacity-90 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300 overflow-hidden text-center shadow-inner"
+			class="absolute inset-0 w-full h-full overflow-hidden text-center duration-300 shadow-inner opacity-0 motion-safe:transition-opacity bg-crisp-dark bg-opacity-90 group-hover:opacity-100 group-focus:opacity-100"
 		>
-			<section class="w-full h-full space-y-3 grid place-content-center">
-				<span class="font-semibold text-gray-300 text-sm rotate-1">Reset Presents:</span>
+			<section class="grid w-full h-full space-y-3 place-content-center">
+				<span class="text-sm font-semibold text-gray-300 rotate-1">Reset Presents:</span>
 				<h3
-					class="text-4xl font-heading transition-transform translate-y-52 -rotate-4 group-hover:translate-y-0 group-hover:-rotate-2 group-focus:translate-y-0 group-focus:-rotate-2"
+					class="text-4xl motion-safe:transition-transform font-heading translate-y-52 -rotate-4 group-hover:translate-y-0 group-hover:-rotate-2 group-focus:translate-y-0 group-focus:-rotate-2"
 				>
 					{event.title}
 				</h3>
 				<time
-					class="transition-transform translate-y-96 -rotate-8 group-hover:translate-y-0 group-hover:rotate-0 group-focus:translate-y-0 group-focus:rotate-0 delay-200"
+					class="motion-safe:transition-transform motion-safe:delay-200 translate-y-96 -rotate-8 group-hover:translate-y-0 group-hover:rotate-0 group-focus:translate-y-0 group-focus:rotate-0"
 					>{startTimeString}</time
 				>
 			</section>
@@ -50,7 +50,7 @@
 				stroke-linejoin="round"
 				aria-hidden="true"
 				role="presentation"
-				class="absolute right-3 top-3 w-12 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-all duration-300 rotate-90 translate-x-24 -translate-y-24 group-hover:translate-x-0 group-hover:translate-y-0"
+				class="absolute w-12 duration-300 rotate-90 translate-x-24 -translate-y-24 opacity-0 motion-safe:transition-all right-3 top-3 group-hover:opacity-100 group-focus:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0"
 			>
 				<path d="M18 18L6 6" />
 				<path d="M8 18h10V8" />
@@ -61,7 +61,7 @@
 
 <style lang="postcss">
 	.card {
-		@apply w-full h-full relative;
+		@apply w-full h-full relative z-10;
 		@apply border-white border-2 translate-y-0 transition-transform;
 		@apply hover:-translate-y-2 hover:rotate-1;
 	}
