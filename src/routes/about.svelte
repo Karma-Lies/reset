@@ -47,7 +47,7 @@
 
 <section
 	id="main-content"
-	class="grid grid-flow-row p-4 lg:p-8 lg:pt-4 lg:grid-cols-2 text-gray-100"
+	class="grid grid-flow-row p-4 text-gray-100 lg:p-8 lg:pt-4 lg:grid-cols-2 min-h-[40rem]"
 >
 	<section class="relative flex" id="visual">
 		<div>
@@ -62,14 +62,14 @@
 		<div id="radials" class="w-full h-full m-2" />
 	</section>
 	<section
-		class="relative rounded-sm py-8 lg:px-8 flex flex-col justify-center border-0 lg:border-2 border-gray-800 border-opacity-40 "
+		class="relative flex flex-col justify-center py-8 border-0 border-gray-800 rounded-sm lg:px-8 lg:border-2 border-opacity-40 "
 	>
 		<a href="https://soundcloud.com/reset_presents/foret" target="_blank">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 24 24"
 				fill="currentColor"
-				class="w-16 absolute p-2 rounded-sm bg-gradient-to-br from-indigo-600 to-indigo-800 via-indigo-600 border-2 border-indigo-400 border-opacity-40 mix-blend-difference  -top-8 lg:-top-4 right-2 lg:right-2 backdrop-blur-sm hover:text-indigo-900 motion-safe:transition-all rotate-2 hover:rotate-0 hover:scale-90"
+				class="absolute w-16 p-2 border-2 border-indigo-400 rounded-sm bg-gradient-to-br from-indigo-600 to-indigo-800 via-indigo-600 border-opacity-40 bg-blend-difference -top-8 lg:-top-4 right-2 lg:right-2 backdrop-blur-sm hover:text-indigo-900 motion-safe:transition-all rotate-2 hover:rotate-0 hover:scale-90"
 				><path fill="none" d="M0 0h24v24H0z" /><path
 					d="M12 13.535V3h8v2h-6v12a4 4 0 1 1-2-3.465zM10 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"
 				/></svg
@@ -85,12 +85,6 @@
 			artists across genres in the Windy City and put on under-appreciated local talent.
 		</p>
 	</section>
-</section>
-<section class="grid place-items-center min-h-[10rem] p-4">
-	<div class="max-w-max">
-		<h2 class="font-heading text-3xl text-indigo-400">More is coming soon...</h2>
-		<div class="ml-auto top-2 h-0.5 rounded-sm bg-gradient-to-l from-indigo-500" />
-	</div>
 </section>
 
 <style lang="postcss">
