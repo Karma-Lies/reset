@@ -1,7 +1,17 @@
-<svelte:head>
-	<title>uh oh! 404</title>
+<script>
+	import { SEO } from '$lib/components/01. atoms/SEO.svelte';
+</script>
+
+<SEO
+	title="uh oh! 404"
+	image={{
+		src: '/photos/404.jpg',
+		alt: 'this shit not found'
+	}}
+	authorTwitter="karma_lies"
+>
 	<meta name="robots" content="noindex" />
-</svelte:head>
+</SEO>
 
 <section id="main-content" class="grid place-content-center h-[32rem]">
 	<h1 class="text-9xl font-heading text-gray-100 text-center">404</h1>
