@@ -11,16 +11,16 @@
 <script>
 	// Component imports
 	import SEO from '$lib/components/01. atoms/SEO.svelte';
+	import Breadcrumbs from '$lib/components/02. molecules/Breadcrumbs.svelte';
 	import UpcomingEvents from '$lib/components/03. modules/UpcomingEvents.svelte';
 	import CardGrid from '../lib/components/03. modules/CardGrid.svelte';
 
 	// Library imports
-	import { getPastEvents } from '$lib/utils/events.js';
-	import Breadcrumbs from '$lib/components/02. molecules/Breadcrumbs.svelte';
+	import { getPastEvents, sortEventsByDate } from '$lib/utils/events.js';
 
 	// Props
 	export let events;
-	const pastEvents = getPastEvents(events);
+	const pastEvents = sortEventsByDate(getPastEvents(events));
 </script>
 
 <SEO prefixSiteName />

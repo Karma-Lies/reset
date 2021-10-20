@@ -7,3 +7,8 @@
 [build]
   command = "npm run build"
   publish = "build"
+
+[[redirects]]
+  from = "*"
+  to = "/404"
+  status = 404

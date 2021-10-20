@@ -3,13 +3,13 @@
 	import CardGrid from '$lib/components/03. modules/CardGrid.svelte';
 
 	// Library imports
-	import { getUpcomingEvents } from '$lib/utils/events.js';
+	import { getUpcomingEvents, sortEventsByDate } from '$lib/utils/events.js';
 
 	// Props
 	export let events;
 
 	// Logic
-	const upcomingEvents = getUpcomingEvents(events);
+	const upcomingEvents = sortEventsByDate(getUpcomingEvents(events), false);
 </script>
 
 {#if upcomingEvents.length > 0}

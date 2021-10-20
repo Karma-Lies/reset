@@ -31,13 +31,13 @@
 	import UpcomingEvents from '$lib/components/03. modules/UpcomingEvents.svelte';
 
 	// Library imports
-	import { getPastEvents } from '$lib/utils/events';
+	import { getPastEvents, sortEventsByDate } from '$lib/utils/events';
 
 	// Props
 	export let events;
 	export let year;
 	export let path;
-	const pastEvents = getPastEvents(events);
+	const pastEvents = sortEventsByDate(getPastEvents(events));
 </script>
 
 <SEO
