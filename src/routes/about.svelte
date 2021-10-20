@@ -54,7 +54,7 @@
 			<img
 				src="/photos/Willy Crooks.jpg"
 				alt="William Crooks goin hard at our HXRY aftershow back in 2020"
-				class="object-cover rounded-sm lg:rounded-r-none lg:h-full"
+				class="object-cover h-full rounded-sm lg:rounded-r-none"
 				width="1368"
 				height="912"
 			/>
