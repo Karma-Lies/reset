@@ -15,6 +15,19 @@ export const getPastEvents = (events) =>
 	events.filter((event) => new Date(event.startTime) < new Date());
 
 /**
+ * Sorts events by their start time in ascending or descending order
+ * @param {{}[]} events set of events that needa be sorted
+ * @param {Boolean} isDescending sorting order
+ * @returns
+ */
+export const sortEventsByDate = (events, isDescending = true) =>
+	events
+		.slice()
+		.sort(
+			(a, b) =>
+				new Date((isDescending ? b : a).startTime) - new Date((isDescending ? a : b).startTime)
+		);
+/**
  * Grabs events from the events API with query params
  * @param {Function} fetchFn SvelteKit server-side fetch function
  * @param {String} order ordering of events by time ('ASC', 'DESC')
