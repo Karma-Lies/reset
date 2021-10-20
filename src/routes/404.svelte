@@ -1,5 +1,5 @@
 <script>
-	import { SEO } from '$lib/components/01. atoms/SEO.svelte';
+	import SEO from '$lib/components/01. atoms/SEO.svelte';
 </script>
 
 <SEO
