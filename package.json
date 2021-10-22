@@ -15,7 +15,7 @@
 	},
 	"devDependencies": {
 		"@poppanator/sveltekit-svg": "0.1.7",
-		"@sendgrid/mail": "7.4.7",
+		"@sendgrid/mail": "7.5.0",
 		"@sveltejs/adapter-static": "1.0.0-next.21",
 		"@sveltejs/kit": "1.0.0-next.188",
 		"@vimeo/player": "2.16.1",
