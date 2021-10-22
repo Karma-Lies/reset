@@ -109,7 +109,7 @@
 				<h3>Address</h3>
 				<address id="address" class="not-italic cursor-help">{event.address}</address>
 			</li>
-			{#if event.artists}
+			{#if event.artists?.length > 0}
 				<li aria-label="Check out the performers at this show">
 					<h3>Artists</h3>
 					<ArtistList artists={event.artists} />
