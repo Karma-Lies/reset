@@ -19,6 +19,7 @@ export async function get({ params }) {
 				}
 				address
 				ticketPurchaseUrl
+				isSoldOut
 				accentColor {
 					hex
 					rgba {

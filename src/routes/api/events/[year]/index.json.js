@@ -19,6 +19,7 @@ export async function get(page) {
 				slug
 				id
 				startTime
+				isSoldOut
 				flyer {
 					id
 					url

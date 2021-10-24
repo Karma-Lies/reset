@@ -34,6 +34,9 @@
 					class="text-4xl motion-safe:transition-transform font-heading translate-y-52 -rotate-4 group-hover:translate-y-0 group-hover:-rotate-2 group-focus:translate-y-0 group-focus:-rotate-2"
 				>
 					{event.title}
+					{#if event.isSoldOut}
+						<span class="italic text-purple-300">[SOLD OUT]</span>
+					{/if}
 				</h3>
 				<time
 					class="motion-safe:transition-transform motion-safe:delay-200 translate-y-96 -rotate-8 group-hover:translate-y-0 group-hover:rotate-0 group-focus:translate-y-0 group-focus:rotate-0"

@@ -94,8 +94,12 @@
 				{event.title}
 			</h1>
 			{#if event.ticketPurchaseUrl}
-				<TicketPurchase eventID={event.eventbriteID} url={event.ticketPurchaseUrl}>
-					{ticketButtonCTA}
+				<TicketPurchase
+					eventID={event.eventbriteID}
+					url={event.ticketPurchaseUrl}
+					isSoldOut={event.isSoldOut}
+				>
+					{event.isSoldOut ? 'Sold Out :(' : ticketButtonCTA}
 				</TicketPurchase>
 			{/if}
 		</div>
