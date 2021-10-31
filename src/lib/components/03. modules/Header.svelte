@@ -8,8 +8,7 @@
 	<SkipToContent />
 	<nav
 		class="mx-auto text-lg text-black pointer-events-auto max-w-max dark:text-gray-100 drop-shadow-bonk-light dark:drop-shadow-bonk-dark"
-		role="navigation"
-		label="Primary"
+		aria-label="Primary"
 	>
 		<ul class="flex space-x-4 text-sm justify-evenly place-items-center md:text-base font-heading">
 			<li class="w-16 text-right">

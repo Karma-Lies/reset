@@ -11,9 +11,8 @@
 </script>
 
 <nav
-	class="px-6 font-medium tracking-wide text-sm uppercase max-w-max m-auto text-gray-400"
-	role="navigation"
-	label="Secondary"
+	class="px-6 m-auto text-sm font-medium tracking-wide text-gray-400 uppercase max-w-max"
+	aria-label="Secondary"
 >
 	<ArrowContainer isBack={true} isLink={false}>
 		<ol class="flex">
