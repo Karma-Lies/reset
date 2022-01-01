@@ -30,7 +30,7 @@
 		"netlify-cli": "6.9.30",
 		"postcss": "8.3.11",
 		"postcss-load-config": "3.1.0",
-		"prettier": "2.4.1",
+		"prettier": "2.5.1",
 		"prettier-plugin-svelte": "2.4.0",
 		"svelte": "3.44.3",
 		"svelte-preprocess": "4.9.8",
