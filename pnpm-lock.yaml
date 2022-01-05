@@ -17,7 +17,7 @@ specifiers:
   netlify-cli: 6.9.30
   postcss: 8.3.11
   postcss-load-config: 3.1.0
-  prettier: 2.4.1
+  prettier: 2.5.1
   prettier-plugin-svelte: 2.4.0
   svelte: 3.44.3
   svelte-preprocess: 4.9.8
@@ -40,8 +40,8 @@ devDependencies:
   netlify-cli: 6.9.30
   postcss: 8.3.11
   postcss-load-config: 3.1.0
-  prettier: 2.4.1
-  prettier-plugin-svelte: 2.4.0_prettier@2.4.1+svelte@3.44.3
+  prettier: 2.5.1
+  prettier-plugin-svelte: 2.4.0_prettier@2.5.1+svelte@3.44.3
   svelte: 3.44.3
   svelte-preprocess: 4.9.8_411f22940bb2ac8390d4c594fec66121
   tailwindcss: 2.2.17_fa866e6aa6eb85ed70431566fb699b34
@@ -8718,18 +8718,18 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /prettier-plugin-svelte/2.4.0_prettier@2.4.1+svelte@3.44.3:
+  /prettier-plugin-svelte/2.4.0_prettier@2.5.1+svelte@3.44.3:
     resolution: {integrity: sha512-JwJ9bOz4XHLQtiLnX4mTSSDUdhu12WH8sTwy/XTDCSyPlah6IcV7NWeYBZscPEcceu2YnW8Y9sJCP40Z2UH9GA==}
     peerDependencies:
       prettier: ^1.16.4 || ^2.0.0
       svelte: ^3.2.0
     dependencies:
-      prettier: 2.4.1
+      prettier: 2.5.1
       svelte: 3.44.3
     dev: true
 
-  /prettier/2.4.1:
-    resolution: {integrity: sha512-9fbDAXSBcc6Bs1mZrDYb3XKzDLm4EXXL9sC1LqKP5rZkT6KRr/rf9amVUcODVXgguK/isJz0d0hP72WeaKWsvA==}
+  /prettier/2.5.1:
+    resolution: {integrity: sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
