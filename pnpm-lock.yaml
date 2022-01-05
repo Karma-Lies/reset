@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@poppanator/sveltekit-svg': 0.1.7
+  '@poppanator/sveltekit-svg': 0.2.2
   '@sendgrid/mail': 7.5.0
   '@sveltejs/adapter-static': 1.0.0-next.21
   '@sveltejs/kit': 1.0.0-next.188
@@ -24,7 +24,7 @@ specifiers:
   tailwindcss: 2.2.17
 
 devDependencies:
-  '@poppanator/sveltekit-svg': 0.1.7_svelte@3.44.3
+  '@poppanator/sveltekit-svg': 0.2.2_svelte@3.44.3
   '@sendgrid/mail': 7.5.0
   '@sveltejs/adapter-static': 1.0.0-next.21
   '@sveltejs/kit': 1.0.0-next.188_svelte@3.44.3
@@ -2426,8 +2426,8 @@ packages:
       '@octokit/openapi-types': 10.6.4
     dev: true
 
-  /@poppanator/sveltekit-svg/0.1.7_svelte@3.44.3:
-    resolution: {integrity: sha512-cNa03XX38mBAwQMX44JQ96ZUAZkyFrra5RNmit/CKH7vqYoM4fa7OUzY1OnsPFQfvx8aESM9SOZ9t1/SP3s/Dg==}
+  /@poppanator/sveltekit-svg/0.2.2_svelte@3.44.3:
+    resolution: {integrity: sha512-eEqFz2ff+9LeGbC/1njye4bzMlakclwnqtX/Gz8FEYarzRP4Op+ekYv0M+mp7rXD9kwW7vHmLJooQqjV12dEXA==}
     peerDependencies:
       svelte: 3.x
     dependencies:
