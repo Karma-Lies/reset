@@ -3,7 +3,7 @@
 	// Component imports
 	import Button from '$lib/components/01. atoms/Button.svelte';
 	import Modal from '$lib/components/02. molecules/Modal.svelte';
-	import Captcha from '$lib/components/01. atoms/Captcha.svelte';
+	import Captcha from '$lib/components/03. modules/Captcha.svelte';
 
 	// Library imports
 	import axios from 'axios';

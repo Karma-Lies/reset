@@ -16,7 +16,7 @@
 	import SEO from '$lib/components/01. atoms/SEO.svelte';
 	import Breadcrumbs from '$lib/components/02. molecules/Breadcrumbs.svelte';
 	import Button from '$lib/components/01. atoms/Button.svelte';
-	import Captcha from '$lib/components/01. atoms/Captcha.svelte';
+	import Captcha from '$lib/components/03. modules/Captcha.svelte';
 	import Modal from '$lib/components/02. molecules/Modal.svelte';
 
 	// Library imports
