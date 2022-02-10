@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@poppanator/sveltekit-svg': 0.2.2
-  '@sendgrid/mail': 7.5.0
+  '@sendgrid/mail': 7.6.1
   '@sveltejs/adapter-static': 1.0.0-next.21
   '@sveltejs/kit': 1.0.0-next.188
   '@vimeo/player': 2.16.1
@@ -25,7 +25,7 @@ specifiers:
 
 devDependencies:
   '@poppanator/sveltekit-svg': 0.2.2_svelte@3.44.3
-  '@sendgrid/mail': 7.5.0
+  '@sendgrid/mail': 7.6.1
   '@sveltejs/adapter-static': 1.0.0-next.21
   '@sveltejs/kit': 1.0.0-next.188_svelte@3.44.3
   '@vimeo/player': 2.16.1
@@ -2539,29 +2539,29 @@ packages:
       rxjs: 6.6.7
     dev: true
 
-  /@sendgrid/client/7.5.0:
-    resolution: {integrity: sha512-tu2l3a1Egp65hRsDdX6qUHvpZydZvgEL7PLViQh4uu5DTqztpNCyw0UQYkyPYyXInWJjLax12UOciTG2V/s4OQ==}
+  /@sendgrid/client/7.6.1:
+    resolution: {integrity: sha512-q4U5OhcbJjs+lLVv/LhZSc28feiVCFMgvG9aYcRI5X4tKArnrrGDWb5HMITR9vaAtX42TXhyPFjHr1fk/Q1loQ==}
     engines: {node: 6.* || 8.* || >=10.*}
     dependencies:
-      '@sendgrid/helpers': 7.5.0
+      '@sendgrid/helpers': 7.6.0
       axios: 0.21.4
     transitivePeerDependencies:
       - debug
     dev: true
 
-  /@sendgrid/helpers/7.5.0:
-    resolution: {integrity: sha512-uzCzpougTDKifyVksx5obZtMcEypq7UVAon/FLurrGEncGrx/N4bYDGPo4chmEdHAZvN75fpavyfETx3DZYebg==}
+  /@sendgrid/helpers/7.6.0:
+    resolution: {integrity: sha512-0uWD+HSXLl4Z/X3cN+UMQC20RE7xwAACgppnfjDyvKG0KvJcUgDGz7HDdQkiMUdcVWfmyk6zKSg7XKfKzBjTwA==}
     engines: {node: '>= 6.0.0'}
     dependencies:
       deepmerge: 4.2.2
     dev: true
 
-  /@sendgrid/mail/7.5.0:
-    resolution: {integrity: sha512-/JEQJagigZreHsApOdFdZC2ZtSwaQY5Kvjj29a3BUrx8bEX0bQUlBjlIVQkrxpkgzTvTQgR3kaRzX6BoLiS44A==}
+  /@sendgrid/mail/7.6.1:
+    resolution: {integrity: sha512-F+HXpDLIU4PGZyZznOiFLDGJDwLn2qh7/wD5MvwurrldDx5DaGQHrYBKHopceOl15FVuq9ElU9VIxQJF8SMvTg==}
     engines: {node: 6.* || 8.* || >=10.*}
     dependencies:
-      '@sendgrid/client': 7.5.0
-      '@sendgrid/helpers': 7.5.0
+      '@sendgrid/client': 7.6.1
+      '@sendgrid/helpers': 7.6.0
     transitivePeerDependencies:
       - debug
     dev: true
