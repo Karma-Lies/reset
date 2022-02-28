@@ -10,33 +10,42 @@
 		});
 
 		const query = gql`
-			query About {
-				page(where: { slug: "about" }) {
-					title
-					body {
-						html
+			query Team {
+				staff {
+					id
+					name
+					pronouns
+					role
+					profilePicture {
+						url
+						width
+						height
 					}
 				}
 			}
 		`;
 
-		let { page } = await graphcms.request(query);
+		let { staff } = await graphcms.request(query);
 
 		return {
 			props: {
-				page
+				team: staff
 			}
 		};
 	}
 </script>
 
-<script>
+<script lang="ts">
 	// Component imports
 	import SEO from '$lib/components/01. atoms/SEO.svelte';
 	import Breadcrumbs from '$lib/components/02. molecules/Breadcrumbs.svelte';
+	import TeamModule from '../lib/components/03. modules/TeamModule.svelte';
+
+	// Type imports
+	import type { StaffMember } from '$lib/types/StaffMember';
 
 	// Props
-	export let page;
+	export let team: StaffMember[];
 </script>
 
 <SEO title="About" url="about" />
@@ -85,6 +94,10 @@
 			artists across genres in the Windy City and put on under-appreciated local talent.
 		</p>
 	</section>
+</section>
+
+<section id="team" class="p-4">
+	<TeamModule {team} />
 </section>
 
 <style lang="postcss">
