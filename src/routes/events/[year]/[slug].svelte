@@ -86,10 +86,17 @@
 		</div>
 	</section>
 	<section class="p-2 space-y-4 md:space-y-2 grout">
-		<div class="flex flex-col flex-wrap items-center space-y-2 md:space-y-0 md:flex-row">
+		<div class="flex flex-col flex-wrap items-center space-y-2 md:space-y-0 lg:flex-row">
+			<!-- Calculating clamp for event title -->
+			<!-- slope = (maxFontSize - minFontSize) / (maxWidth - minWidth) -->
+			<!-- slope = (3.5 - 1.75) / (64 - 26.6) = 0.0468 -->
+			<!-- yAxisIntersection = -minWidth * slope + minFontSize -->
+			<!-- yAxisIntersection = -26.6 * 0.0468 + 1.75 = 0.50512 -->
+			<!-- preferredValue = yAxisIntersection[rem] + (slope * 100)[vw] -->
+			<!-- preferredValue = 0.50512[rem] + (4.68)[vw] -->
 			<h1
-				class="text-6xl text-center break-words font-heading md:mr-6 lg:text-left"
-				style="margin-top: calc((1 - 1.25) * 0.5em);"
+				class="leading-none mb-1 lg:mb-5 text-center break-words font-heading md:mr-6 lg:text-left"
+				style="margin-top: calc((1 - 1.25) * 0.5em); font-size: clamp(1.75rem, 0.50512rem + 4.68vw, 3.5rem);"
 			>
 				{event.title}
 			</h1>
