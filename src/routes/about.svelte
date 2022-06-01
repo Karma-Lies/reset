@@ -34,9 +34,6 @@
 	// Component imports
 	import SEO from '$lib/components/01. atoms/SEO.svelte';
 	import Breadcrumbs from '$lib/components/02. molecules/Breadcrumbs.svelte';
-
-	// Props
-	export let page;
 </script>
 
 <SEO title="About" url="about" />

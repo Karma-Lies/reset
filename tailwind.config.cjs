@@ -1,16 +1,15 @@
 const colors = require('tailwindcss/colors');
 
 const config = {
-	mode: 'jit',
 	darkMode: 'class',
-	purge: ['./src/**/*.{html,js,svelte,ts}'],
+	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		colors: {
 			transparent: 'transparent',
 			current: 'currentColor',
 			black: colors.black,
 			white: colors.white,
-			gray: colors.warmGray,
+			gray: colors.stone,
 			indigo: colors.indigo,
 			purple: colors.purple,
 			red: colors.rose,
