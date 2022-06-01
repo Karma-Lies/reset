@@ -1,14 +1,18 @@
+[build.environment]
+NODE_VERSION = "16"
+NPM_FLAGS = "--prefix=/dev/null"
+
 [dev]
-  autoLaunch = false
+autoLaunch = false
 
 [functions]
-  directory = "functions"
-  
+
+directory = "functions"
 [build]
-  command = "npm run build"
-  publish = "build"
+command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build"
+publish = "build"
 
 [[redirects]]
-  from = "*"
-  to = "/404"
-  status = 404
+from = "*"
+status = 404
+to = "/404"
