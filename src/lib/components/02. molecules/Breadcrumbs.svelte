@@ -2,7 +2,7 @@
 	import ArrowContainer from '$lib/components/01. atoms/ArrowContainer.svelte';
 
 	export let accentColor = 'gray';
-	export let path = '/events/2021';
+	export let path = '/events';
 	// Clear the leading slash then split the path by slashes
 	const directory = path.substring(1).split('/');
 	// Current page that this component is showing up on
@@ -15,7 +15,7 @@
 	aria-label="Secondary"
 >
 	<ArrowContainer isBack={true} isLink={false}>
-		<ol class="flex">
+		<ol class="flex flex-row">
 			{#each crumbs as crumb, index}
 				<li class="opacity-75">
 					<a

@@ -1,11 +1,12 @@
+import type { Page } from '@sveltejs/kit';
 import { gql, GraphQLClient } from 'graphql-request';
 
-export async function get(page) {
+export async function get(page: Page) {
 	const graphcms = new GraphQLClient(import.meta.env.VITE_GRAPHCMS_URL, {
 		headers: {}
 	});
 
-	const order = page.query.get('order') ?? 'ASC';
+	const order = page.url.searchParams.get('order') ?? 'ASC';
 
 	const orderBy = { orderBy: `startTime_${order}` };
 
@@ -45,7 +46,7 @@ export async function get(page) {
 		};
 	});
 
-	return page.query.get('stats') === 'true'
+	return page.url.searchParams.get('stats') === 'true'
 		? {
 				body: {
 					stats,

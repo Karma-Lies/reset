@@ -1,6 +1,7 @@
+import type { Page } from '@sveltejs/kit';
 import { gql, GraphQLClient } from 'graphql-request';
 
-export async function get({ params }) {
+export async function get({ params }: Page) {
 	const { slug } = params;
 	const graphcms = new GraphQLClient(import.meta.env.VITE_GRAPHCMS_URL, {
 		headers: {}

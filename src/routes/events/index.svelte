@@ -1,12 +1,11 @@
-<script context="module">
+<script context="module" lang="ts">
+	import type { LoadEvent } from '@sveltejs/kit';
+
 	export const hydrate = false;
 
-	/**
-	 * @type {import('@sveltejs/kit').Load}
-	 */
-	export async function load({ page, fetch }) {
-		const url = '/api/events.json?stats=true';
-		const res = await fetch(url);
+	export async function load({ url, fetch }: LoadEvent) {
+		const apiURL = '/api/events.json?stats=true';
+		const res = await fetch(apiURL);
 
 		if (res.ok) {
 			const { stats, events } = await res.json();
@@ -14,7 +13,7 @@
 				props: {
 					stats,
 					events,
-					path: page.path
+					path: url.pathname
 				}
 			};
 		}
@@ -26,14 +25,14 @@
 	}
 </script>
 
-<script>
+<script lang="ts">
 	// Component imports
 	import SEO from '$lib/components/01. atoms/SEO.svelte';
 	import Breadcrumbs from '$lib/components/02. molecules/Breadcrumbs.svelte';
 
 	// Props
 	export let stats;
-	export let path;
+	export let path: string;
 </script>
 
 <SEO
@@ -56,7 +55,7 @@
 			alt="Fraxiom in 2020"
 			width="1095"
 			height="1095"
-			lazyload
+			loading="lazy"
 			class="w-5/6 lg:w-1/2 h-full min-h-[16rem] object-cover object-bottom pr-2"
 		/>
 		<p id="cta" class="z-10 opacity-80">select a year</p>

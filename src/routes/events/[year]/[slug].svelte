@@ -1,18 +1,17 @@
-<script context="module">
-	/**
-	 * @type {import('@sveltejs/kit').Load}
-	 */
-	export async function load({ page, fetch }) {
-		const url = `/api/events/${page.params.year}/${page.params.slug}.json`;
-		const res = await fetch(url);
+<script context="module" lang="ts">
+	import type { LoadEvent } from '@sveltejs/kit';
+
+	export async function load({ params, url, fetch }: LoadEvent) {
+		const apiURL = `/api/events/${params.year}/${params.slug}.json`;
+		const res = await fetch(apiURL);
 
 		if (res.ok) {
 			return {
 				props: {
 					event: await res.json(),
-					year: page.params.year,
-					slug: page.params.slug,
-					path: page.path
+					year: params.year,
+					slug: params.slug,
+					path: url.pathname
 				}
 			};
 		}
@@ -38,10 +37,10 @@
 	export let slug;
 	export let path;
 
-	const currentTime = new Date();
+	const currentTime = new Date().getTime();
 	const eventStartTime = new Date(event.startTime);
 	const eventEndTime = new Date(event.endTime ?? 0);
-	const eventTimeAnchor = Math.max(eventStartTime, eventEndTime);
+	const eventTimeAnchor = Math.max(eventStartTime.getTime(), eventEndTime.getTime());
 	const startTimeString = eventStartTime.toLocaleString('en-US', {
 		weekday: 'short',
 		year: 'numeric',
@@ -51,6 +50,7 @@
 		minute: '2-digit'
 	});
 	const ticketButtonCTA = eventTimeAnchor >= currentTime ? 'Get Tickets' : 'Sold Out';
+	const isSoldOut = event.isSoldOut || ticketButtonCTA === 'Sold Out';
 </script>
 
 <SEO
@@ -86,7 +86,7 @@
 		</div>
 	</section>
 	<section class="p-2 space-y-4 md:space-y-2 grout">
-		<div class="flex flex-col flex-wrap items-center space-y-2 md:space-y-0 lg:flex-row">
+		<div class="flex flex-col flex-wrap items-center space-y-2 md:items-start pb-1.5">
 			<!-- Calculating clamp for event title -->
 			<!-- slope = (maxFontSize - minFontSize) / (maxWidth - minWidth) -->
 			<!-- slope = (3.5 - 1.75) / (64 - 26.6) = 0.0468 -->
@@ -95,18 +95,18 @@
 			<!-- preferredValue = yAxisIntersection[rem] + (slope * 100)[vw] -->
 			<!-- preferredValue = 0.50512[rem] + (4.68)[vw] -->
 			<h1
-				class="leading-none mb-1 lg:mb-5 text-center break-words font-heading md:mr-6 lg:text-left"
+				class="leading-none text-center break-words font-heading md:mr-6 lg:text-left"
 				style="margin-top: calc((1 - 1.25) * 0.5em); font-size: clamp(1.75rem, 0.50512rem + 4.68vw, 3.5rem);"
 			>
 				{event.title}
 			</h1>
 			{#if event.ticketPurchaseUrl}
-				<TicketPurchase
-					eventID={event.eventbriteID}
-					url={event.ticketPurchaseUrl}
-					isSoldOut={event.isSoldOut}
-				>
-					{event.isSoldOut ? 'Sold Out :(' : ticketButtonCTA}
+				<TicketPurchase eventID={event.eventbriteID} url={event.ticketPurchaseUrl} {isSoldOut}>
+					{#if isSoldOut}
+						Sold Out :(
+					{:else}
+						{ticketButtonCTA}
+					{/if}
 				</TicketPurchase>
 			{/if}
 		</div>

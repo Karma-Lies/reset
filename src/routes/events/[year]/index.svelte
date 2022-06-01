@@ -1,17 +1,16 @@
-<script context="module">
-	/**
-	 * @type {import('@sveltejs/kit').Load}
-	 */
-	export async function load({ page, fetch }) {
-		const url = `/api/events/${page.params.year}.json?order=DESC`;
-		const res = await fetch(url);
+<script context="module" lang="ts">
+	import type { LoadEvent } from '@sveltejs/kit';
+
+	export async function load({ params, url, fetch }: LoadEvent) {
+		const apiURL = `/api/events/${params.year}.json?order=DESC`;
+		const res = await fetch(apiURL);
 
 		if (res.ok) {
 			return {
 				props: {
 					events: await res.json(),
-					year: page.params.year,
-					path: page.path
+					year: params.year,
+					path: url.pathname
 				}
 			};
 		}
@@ -23,7 +22,7 @@
 	}
 </script>
 
-<script>
+<script lang="ts">
 	// Component imports
 	import SEO from '$lib/components/01. atoms/SEO.svelte';
 	import Breadcrumbs from '$lib/components/02. molecules/Breadcrumbs.svelte';
@@ -35,8 +34,9 @@
 
 	// Props
 	export let events;
-	export let year;
-	export let path;
+	export let year: string;
+	export let path: string;
+
 	const pastEvents = sortEventsByDate(getPastEvents(events));
 </script>
 

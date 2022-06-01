@@ -1,17 +1,16 @@
-<script context="module">
-	/**
-	 * @type {import('@sveltejs/kit').Load}
-	 */
-	export async function load({ page }) {
+<script context="module" lang="ts">
+	import type { LoadEvent } from '@sveltejs/kit';
+
+	export async function load({ url }: LoadEvent) {
 		return {
 			props: {
-				path: page.path
+				path: url.pathname
 			}
 		};
 	}
 </script>
 
-<script>
+<script lang="ts">
 	// Component imports
 	import SEO from '$lib/components/01. atoms/SEO.svelte';
 	import Breadcrumbs from '$lib/components/02. molecules/Breadcrumbs.svelte';
@@ -23,10 +22,12 @@
 	import axios from 'axios';
 
 	// Props
-	export let path;
+	export let path: string;
 
 	// Form input values
-	let name, email, details;
+	let name: string;
+	let email: string;
+	let details: string;
 
 	// CTA button state management
 	let buttonState = 'default';
@@ -149,7 +150,7 @@
 					autocomplete="name"
 					placeholder="Name"
 					maxlength="320"
-					spellcheck="off"
+					spellcheck="false"
 					required
 				/>
 			</div>
@@ -163,7 +164,7 @@
 					autocomplete="email"
 					placeholder="Email address"
 					maxlength="320"
-					spellcheck="off"
+					spellcheck="false"
 					required
 				/>
 			</div>
