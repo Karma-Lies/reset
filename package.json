@@ -14,7 +14,7 @@
 		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
-		"@poppanator/sveltekit-svg": "0.2.2",
+		"@poppanator/sveltekit-svg": "0.3.4",
 		"@sendgrid/mail": "7.5.0",
 		"@sveltejs/adapter-static": "1.0.0-next.34",
 		"@sveltejs/kit": "1.0.0-next.347",
