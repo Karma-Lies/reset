@@ -22,7 +22,7 @@
 		"@sveltejs/kit": "1.0.0-next.347",
 		"@vimeo/player": "2.16.1",
 		"autoprefixer": "10.4.7",
-		"axios": "0.23.0",
+		"axios": "0.27.2",
 		"cssnano": "5.1.10",
 		"eslint": "7.32.0",
 		"eslint-config-prettier": "8.3.0",
