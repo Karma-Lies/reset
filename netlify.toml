@@ -1,14 +1,14 @@
 [build.environment]
 NODE_VERSION = "16"
+NPM_FLAGS = "--version"
 
 [dev]
 autoLaunch = false
 
 [functions]
-
 directory = "functions"
+
 [build]
-command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build"
 publish = "build"
 
 [[redirects]]
