@@ -29,7 +29,7 @@
 		"eslint-plugin-svelte3": "3.2.1",
 		"graphql": "15.6.1",
 		"graphql-request": "3.6.0",
-		"netlify-cli": "6.9.30",
+		"netlify-cli": "6.15.0",
 		"postcss": "8.4.14",
 		"postcss-load-config": "4.0.1",
 		"prettier": "2.5.1",
