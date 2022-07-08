@@ -6,10 +6,8 @@
 		"npm": ">=6.14"
 	},
 	"scripts": {
-		"preinstall": "npx only-allow pnpm",
 		"netlify": "netlify dev",
 		"dev": "svelte-kit dev --host",
-		"prebuild": "test \"$CI\" = true && npx pnpm install -r --store=node_modules/.pnpm-store || echo skiping pnpm install",
 		"build": "svelte-kit build",
 		"preview": "svelte-kit preview --https",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
