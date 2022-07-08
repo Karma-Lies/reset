@@ -12,6 +12,7 @@ specifiers:
   eslint: 7.32.0
   eslint-config-prettier: 8.3.0
   eslint-plugin-svelte3: 3.2.1
+  follow-redirects: ^1.15.1
   graphql: 15.6.1
   graphql-request: 3.6.0
   netlify-cli: 10.7.1
@@ -35,6 +36,7 @@ devDependencies:
   eslint: 7.32.0
   eslint-config-prettier: 8.3.0_eslint@7.32.0
   eslint-plugin-svelte3: 3.2.1_6wevxxng4y4ff26nzlndg2wnpa
+  follow-redirects: 1.15.1_debug@4.3.4
   graphql: 15.6.1
   graphql-request: 3.6.0_graphql@15.6.1
   netlify-cli: 10.7.1
@@ -1831,7 +1833,7 @@ packages:
   /axios/0.21.4:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
     dependencies:
-      follow-redirects: 1.14.4
+      follow-redirects: 1.15.1_debug@4.3.4
     transitivePeerDependencies:
       - debug
     dev: true
@@ -4220,16 +4222,6 @@ packages:
     resolution: {integrity: sha512-VjAQdSLsl6AkpZNyrQJfO7BXLo4chnStqb055bumZMbRUPpVuPN3a4ktsnRCmrFZjtMlYLkyXiR5rAs4WOpC4Q==}
     dependencies:
       from2: 2.3.0
-    dev: true
-
-  /follow-redirects/1.14.4:
-    resolution: {integrity: sha512-zwGkiSXC1MUJG/qmeIFH2HBJx9u0V46QGUe3YR1fXG8bXQxq7fLj0RjLZQ5nubr9qNJUZrH+xUcwXEoXNpfS+g==}
-    engines: {node: '>=4.0'}
-    peerDependencies:
-      debug: '*'
-    peerDependenciesMeta:
-      debug:
-        optional: true
     dev: true
 
   /follow-redirects/1.15.1_debug@4.3.4:
