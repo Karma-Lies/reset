@@ -43,7 +43,12 @@ export async function get(page: Page) {
 
 	events.forEach((event) => {
 		// Extract the year from the event start time
-		event.year = new Date(event.startTime).getUTCFullYear();
+		event.year = Number(
+			new Date(event.startTime).toLocaleString('en-US', {
+				year: 'numeric',
+				timeZone: 'America/Chicago'
+			})
+		);
 	});
 
 	return {

@@ -47,7 +47,8 @@
 		month: 'long',
 		day: 'numeric',
 		hour: '2-digit',
-		minute: '2-digit'
+		minute: '2-digit',
+		timeZone: 'America/Chicago'
 	});
 	const ticketButtonCTA = eventTimeAnchor >= currentTime ? 'Get Tickets' : 'Sold Out';
 	const isSoldOut = event.isSoldOut || ticketButtonCTA === 'Sold Out';
@@ -57,7 +58,8 @@
 	title="{event.title} Tickets | {eventStartTime.toLocaleString('en-US', {
 		year: 'numeric',
 		month: 'short',
-		day: 'numeric'
+		day: 'numeric',
+		timeZone: 'America/Chicago'
 	})} Chicago, IL"
 	description={event.description.text}
 	url="events/{year}/{slug}"

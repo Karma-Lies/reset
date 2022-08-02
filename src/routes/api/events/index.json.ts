@@ -32,7 +32,12 @@ export async function get(page: Page) {
 	// Array of years for each event
 	const years = events.map((event, i) => {
 		// Extract the year from the event start time
-		const year = new Date(event.startTime).getUTCFullYear();
+		const year = Number(
+			new Date(event.startTime).toLocaleString('en-US', {
+				year: 'numeric',
+				timeZone: 'America/Chicago'
+			})
+		);
 		events[i].year = year;
 		return year;
 	});
