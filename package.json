@@ -21,7 +21,7 @@
 		"@vimeo/player": "2.16.1",
 		"autoprefixer": "10.4.7",
 		"axios": "0.27.2",
-		"cssnano": "5.1.10",
+		"cssnano": "5.1.15",
 		"eslint": "7.32.0",
 		"eslint-config-prettier": "8.3.0",
 		"eslint-plugin-svelte3": "3.2.1",
