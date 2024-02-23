@@ -22,7 +22,7 @@
 		"autoprefixer": "10.4.7",
 		"axios": "0.27.2",
 		"cssnano": "5.1.10",
-		"eslint": "7.32.0",
+		"eslint": "8.57.0",
 		"eslint-config-prettier": "8.3.0",
 		"eslint-plugin-svelte3": "3.2.1",
 		"follow-redirects": "^1.15.1",
